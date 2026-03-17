@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# הגדרות מדיה
+media_folder: "public/images/blog"
+public_folder: "/images/blog"
+
+# שפה עברית
+locale: 'he'
+
+# קולקציות
+collections:
+  - name: "blog"
+    label: "מאמרים בבלוג"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "כותרת", name: "title", widget: "string", required: true}
+      - {label: "תאור קצר", name: "description", widget: "text", required: true, hint: "תאור קצר של המאמר (150-160 תווים) - יופיע בגוגל ובמדיה חברתית"}
+      - {label: "תמונה ראשית", name: "featured_image", widget: "image", required: true, hint: "תמונה ראשית למאמר - מומלץ 1200x630 פיקסלים"}
+      - {label: "תאריך פרסום", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", date_format: "DD.MM.YYYY", time_format: "HH:mm", required: true}
+      - {label: "קטגוריה", name: "category", widget: "select", options: ["אטרקציות", "מלונות", "מסעדות", "מדריכים", "אירועים"], required: true}
+      - {label: "תגיות", name: "tags", widget: "list", required: false, hint: "תגיות להמאמר (לדוגמה: טבריה, כנרת, טיולים)"}
+      - {label: "תוכן המאמר", name: "body", widget: "markdown", required: true}
+      - {label: "פורסם", name: "published", widget: "boolean", default: false, hint: "האם המאמר פורסם באתר?"}
+      - {label: "מילות מפתח SEO", name: "seo_keywords", widget: "string", required: false, hint: "מילות מפתח מופרדות בפסיקים"}
+      - {label: "כתב", name: "author", widget: "string", default: "צוות מלונות טבריה", required: false}
+
+  - name: "pages"
+    label: "עמודים"
+    files:
+      - label: "עמוד אודות"
+        name: "about"
+        file: "content/pages/about.md"
+        fields:
+          - {label: "כותרת", name: "title", widget: "string"}
+          - {label: "תוכן", name: "body", widget: "markdown"}
+      - label: "עמוד צור קשר"
+        name: "contact"
+        file: "content/pages/contact.md"
+        fields:
+          - {label: "כותרת", name: "title", widget: "string"}
+          - {label: "תוכן", name: "body", widget: "markdown"}
+          - {label: "אימייל", name: "email", widget: "string"}
+          - {label: "טלפון", name: "phone", widget: "string"}
+
+  - name: "settings"
+    label: "הגדרות"
+    files:
+      - label: "הגדרות כלליות"
+        name: "general"
+        file: "content/settings/general.yml"
+        fields:
+          - {label: "שם האתר", name: "site_name", widget: "string"}
+          - {label: "תיאור האתר", name: "site_description", widget: "text"}
+          - {label: "URL האתר", name: "site_url", widget: "string"}
+          - {label: "לוגו", name: "logo", widget: "image"}
