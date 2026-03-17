@@ -1,0 +1,12 @@
+# robots.txt for hotels-tiberias.co.il
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://hotels-tiberias.co.il/sitemap.xml
+
+# Crawl-delay for responsible crawling
+Crawl-delay: 1

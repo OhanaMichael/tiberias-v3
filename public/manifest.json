@@ -1,0 +1,21 @@
+{
+  "name": "מלונות טבריה - הזמנות ישירות",
+  "short_name": "מלונות טבריה",
+  "description": "מלונות בטבריה - אתר ההזמנות הרשמי. מלונות, ריזורטים ומלונות בוטיק על שפת הכנרת",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#C8832A",
+  "orientation": "portrait",
+  "lang": "he",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "business"]
+}
