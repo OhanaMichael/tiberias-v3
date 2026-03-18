@@ -1,9 +1,12 @@
 {
-  "name": "hotels-tiberias-blog",
+  "name": "hotels-tiberias",
   "version": "1.0.0",
-  "description": "Blog build system for hotels-tiberias.co.il",
+  "description": "Hotels Tiberias - Booking portal with blog",
   "scripts": {
     "build": "node build-blog.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
   },
   "author": "ITMO",
   "license": "MIT"
