@@ -1,16 +1,12 @@
 backend:
-  name: github
-  repo: OhanaMichael/tiberias-v3
+  name: git-gateway
   branch: main
 
-# הגדרות מדיה
 media_folder: "public/images/blog"
 public_folder: "/images/blog"
 
-# שפה עברית
 locale: 'he'
 
-# קולקציות
 collections:
   - name: "blog"
     label: "מאמרים בבלוג"
@@ -21,12 +17,12 @@ collections:
       preview: true
     fields:
       - {label: "כותרת", name: "title", widget: "string", required: true}
-      - {label: "תאור קצר", name: "description", widget: "text", required: true, hint: "תאור קצר של המאמר (150-160 תווים)"}
-      - {label: "תמונה ראשית", name: "featured_image", widget: "image", required: true, hint: "תמונה ראשית למאמר - מומלץ 1200x630 פיקסלים"}
-      - {label: "תאריך פרסום", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", date_format: "DD.MM.YYYY", time_format: "HH:mm", required: true}
+      - {label: "תאור קצר", name: "description", widget: "text", required: true}
+      - {label: "תמונה ראשית", name: "featured_image", widget: "image", required: true}
+      - {label: "תאריך פרסום", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", required: true}
       - {label: "קטגוריה", name: "category", widget: "select", options: ["אטרקציות", "מלונות", "מסעדות", "מדריכים", "אירועים"], required: true}
-      - {label: "תגיות", name: "tags", widget: "list", required: false, hint: "תגיות להמאמר"}
+      - {label: "תגיות", name: "tags", widget: "list", required: false}
       - {label: "תוכן המאמר", name: "body", widget: "markdown", required: true}
-      - {label: "פורסם", name: "published", widget: "boolean", default: false, hint: "האם המאמר פורסם באתר?"}
+      - {label: "פורסם", name: "published", widget: "boolean", default: false}
       - {label: "מילות מפתח SEO", name: "seo_keywords", widget: "string", required: false}
       - {label: "כתב", name: "author", widget: "string", default: "צוות מלונות טבריה", required: false}
