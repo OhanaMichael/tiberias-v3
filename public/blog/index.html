@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>בלוג טיולים וטיפים - מלונות טבריה</title>
+  <meta name="description" content="מדריכים, טיפים והמלצות לטיול מושלם בטבריה ובסביבת הכנרת. אטרקציות, מסעדות, מלונות ועוד.">
+  <meta name="keywords" content="בלוג טבריה, מדריכי טיולים, אטרקציות בטבריה, טיפים לטיול, הכנרת">
+  
+  <link rel="canonical" href="https://hotels-tiberias.co.il/blog/">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="בלוג טיולים וטיפים - מלונות טבריה">
+  <meta property="og:description" content="מדריכים, טיפים והמלצות לטיול מושלם בטבריה">
+  <meta property="og:url" content="https://hotels-tiberias.co.il/blog/">
+  <meta property="og:image" content="https://hotels-tiberias.co.il/og-image.jpg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --navy: #0B1F3A;
+      --navy-mid:#143258;
+      --amber: #C8832A;
+      --amber-lt:#E8A84A;
+      --sand: #F6F0E8;
+      --paper: #FAFAF8;
+      --ink: #111827;
+      --ink-mid: #374151;
+      --ink-lt: #6B7280;
+      --rule: rgba(11,31,58,.1);
+      --sh-sm: 0 2px 10px rgba(11,31,58,.08);
+      --sh-md: 0 8px 32px rgba(11,31,58,.13);
+      --r: 14px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Heebo',sans-serif;background:var(--paper);color:var(--ink);direction:rtl;line-height:1.6;}
+    
+    /* Header */
+    .header{background:var(--navy);color:#fff;padding:60px 20px;text-align:center;position:relative;overflow:hidden;}
+    .header::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);opacity:.8;}
+    .header-inner{position:relative;z-index:2;max-width:800px;margin:0 auto;}
+    .header h1{font-family:'Playfair Display',serif;font-size:clamp(32px,6vw,56px);font-weight:900;margin-bottom:12px;}
+    .header p{font-size:16px;opacity:.85;max-width:600px;margin:0 auto;}
+    .breadcrumb{margin-top:16px;font-size:13px;opacity:.7;}
+    .breadcrumb a{color:#fff;text-decoration:none;}
+    
+    /* Main */
+    .main{max-width:1180px;margin:0 auto;padding:50px 20px 80px;}
+    
+    /* Filter */
+    .filter{display:flex;gap:8px;margin-bottom:30px;flex-wrap:wrap;align-items:center;}
+    .filter-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);padding-left:12px;border-left:3px solid var(--amber);}
+    .filter-btn{background:var(--sand);border:2px solid transparent;border-radius:40px;padding:6px 18px;font-size:13px;font-weight:600;color:var(--ink-mid);cursor:pointer;font-family:'Heebo',sans-serif;transition:all .2s;}
+    .filter-btn:hover{border-color:var(--amber);background:#fff;}
+    .filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+    
+    /* Grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:28px;}
+    @media(max-width:600px){.grid{grid-template-columns:1fr;}}
+    
+    /* Card */
+    .card{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--rule);box-shadow:var(--sh-sm);transition:all .25s;text-decoration:none;color:inherit;display:block;}
+    .card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);}
+    .card-img{height:220px;overflow:hidden;background:linear-gradient(135deg,var(--navy),var(--navy-mid));position:relative;}
+    .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+    .card:hover .card-img img{transform:scale(1.05);}
+    .card-cat{position:absolute;top:12px;right:12px;background:var(--amber);color:var(--navy);font-size:10px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:.5px;}
+    .card-body{padding:22px;}
+    .card-date{font-size:12px;color:var(--ink-lt);margin-bottom:8px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:10px;}
+    .card-desc{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+    .card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
+    .tag{background:rgba(26,155,171,.1);color:#0e7490;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+    .card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--rule);}
+    .card-author{font-size:12px;color:var(--ink-lt);}
+    .card-arrow{color:var(--amber);font-weight:900;}
+    
+    /* Empty */
+    .empty{text-align:center;padding:80px 20px;color:var(--ink-lt);}
+    
+    /* Loading */
+    .loading{text-align:center;padding:80px 20px;}
+    .spinner{width:40px;height:40px;border:4px solid var(--sand);border-top-color:var(--navy);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 16px;}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    
+    /* Footer */
+    footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:30px 20px;font-size:13px;}
+    footer a{color:var(--amber);text-decoration:none;}
+  </style>
+  
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5KX0PHLGY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J5KX0PHLGY');
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>📝 בלוג מלונות טבריה</h1>
+    <p>מדריכים, טיפים והמלצות לטיול מושלם בטבריה ובסביבת הכנרת</p>
+    <div class="breadcrumb">
+      <a href="/">🏠 דף הבית</a> / בלוג
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  
+  <div class="filter" id="filter">
+    <span class="filter-label">סנן לפי</span>
+    <button class="filter-btn active" data-cat="all">הכל</button>
+    <button class="filter-btn" data-cat="אטרקציות">אטרקציות</button>
+    <button class="filter-btn" data-cat="מלונות">מלונות</button>
+    <button class="filter-btn" data-cat="מסעדות">מסעדות</button>
+    <button class="filter-btn" data-cat="מדריכים">מדריכים</button>
+    <button class="filter-btn" data-cat="אירועים">אירועים</button>
+  </div>
+  
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <div>טוען מאמרים...</div>
+  </div>
+  
+  <div class="grid" id="grid" style="display:none"></div>
+  
+  <div class="empty" id="empty" style="display:none">
+    לא נמצאו מאמרים בקטגוריה זו
+  </div>
+  
+</main>
+
+<footer>
+  <div style="max-width:800px;margin:0 auto;">
+    בלוג מלונות טבריה &nbsp;·&nbsp; <a href="/">חזרה לדף הבית</a>
+    <div style="margin-top:10px;font-size:12px;opacity:.7;">
+      כל הזכויות שמורות © 2026
+    </div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+let posts = [];
+let currentCategory = 'all';
+
+async function loadPosts() {
+  try {
+    const response = await fetch('/blog/posts.json');
+    const data = await response.json();
+    posts = data.posts || [];
+    
+    document.getElementById('loading').style.display = 'none';
+    
+    if (posts.length === 0) {
+      document.getElementById('empty').style.display = 'block';
+      return;
+    }
+    
+    renderPosts();
+  } catch (error) {
+    document.getElementById('loading').innerHTML = '<div style="color:var(--ink-lt);">שגיאה בטעינת המאמרים</div>';
+    console.error('Error loading posts:', error);
+  }
+}
+
+function renderPosts() {
+  const filtered = currentCategory === 'all' 
+    ? posts 
+    : posts.filter(p => p.category === currentCategory);
+  
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  
+  if (filtered.length === 0) {
+    grid.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  
+  empty.style.display = 'none';
+  grid.style.display = 'grid';
+  
+  grid.innerHTML = filtered.map(post => {
+    const date = new Date(post.date);
+    const dateStr = date.toLocaleDateString('he-IL', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+    
+    const tags = Array.isArray(post.tags) ? post.tags.slice(0, 3) : [];
+    
+    return `
+      <a href="/blog/${post.slug}/" class="card">
+        <div class="card-img">
+          ${post.featured_image ? `<img src="${post.featured_image}" alt="${post.title}">` : ''}
+          ${post.category ? `<div class="card-cat">${post.category}</div>` : ''}
+        </div>
+        <div class="card-body">
+          <div class="card-date">📅 ${dateStr}</div>
+          <h2 class="card-title">${post.title}</h2>
+          <p class="card-desc">${post.description || ''}</p>
+          ${tags.length > 0 ? `
+            <div class="card-tags">
+              ${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+          ` : ''}
+          <div class="card-footer">
+            <div class="card-author">✍️ ${post.author || 'צוות מלונות טבריה'}</div>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </a>
+    `;
+  }).join('');
+}
+
+// Filter buttons
+document.getElementById('filter').addEventListener('click', (e) => {
+  if (e.target.classList.contains('filter-btn')) {
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    e.target.classList.add('active');
+    currentCategory = e.target.dataset.cat;
+    renderPosts();
+  }
+});
+
+// Netlify Identity
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
+
+loadPosts();
+</script>
+
+</body>
+</html>
