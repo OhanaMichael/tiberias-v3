@@ -84,6 +84,9 @@
     gtag('config', 'G-J5KX0PHLGY');
   </script>
   
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
   <style>
     :root {
       --navy:    #0B1F3A;
@@ -740,5 +743,18 @@ document.addEventListener('click', (e) => {
 
 load();
 </script>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
