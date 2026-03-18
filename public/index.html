@@ -84,9 +84,6 @@
     gtag('config', 'G-J5KX0PHLGY');
   </script>
   
-  <!-- Netlify Identity Widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
   <style>
     :root {
       --navy:    #0B1F3A;
@@ -111,6 +108,18 @@
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{font-family:'Heebo',sans-serif;background:var(--paper);color:var(--ink);direction:rtl;-webkit-font-smoothing:antialiased;}
+
+    /* ───── TOP NAVIGATION BAR ───── */
+    .top-nav{background:#fff;border-bottom:1px solid var(--rule);box-shadow:var(--sh-sm);position:sticky;top:0;z-index:900;}
+    .top-nav-inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px;}
+    .nav-logo:hover{color:var(--amber);}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-link{font-size:14px;font-weight:600;color:var(--ink-mid);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:6px;}
+    .nav-link:hover{color:var(--amber);}
+    .nav-link.blog{background:linear-gradient(135deg,var(--amber) 0%,#D4971F 100%);color:var(--navy);padding:8px 20px;border-radius:40px;font-weight:800;}
+    .nav-link.blog:hover{background:linear-gradient(135deg,var(--amber-lt) 0%,var(--amber) 100%);transform:translateY(-1px);}
+    @media(max-width:700px){.nav-links{gap:16px;}.nav-link{font-size:12px;}.nav-link.blog{padding:6px 14px;font-size:12px;}}
 
     /* ───── MASTHEAD ───── */
     .masthead{
@@ -388,6 +397,18 @@
 </head>
 <body>
 
+<!-- TOP NAVIGATION -->
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <a href="/" class="nav-logo">🏨 מלונות טבריה</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">🏠 דף הבית</a>
+      <a href="/blog/" class="nav-link blog">📝 בלוג וטיפים</a>
+      <a href="/admin.html" class="nav-link">📊 ניהול</a>
+    </div>
+  </div>
+</nav>
+
 <!-- ADVERTISING BANNER -->
 <div class="adv-banner">
   <a href="tel:0505750000">לפרסום כאן פנה אלינו &nbsp;·&nbsp; ITMO &nbsp;·&nbsp; 050-5750000</a>
@@ -450,6 +471,13 @@
 
 <footer>
   <div style="max-width:900px;margin:0 auto;text-align:center">
+    <div style="margin-bottom:16px;font-size:14px">
+      <a href="/" style="color:var(--amber);text-decoration:none;margin:0 12px">🏠 דף הבית</a>
+      <span style="color:rgba(255,255,255,.3)">·</span>
+      <a href="/blog/" style="color:var(--amber);text-decoration:none;margin:0 12px">📝 בלוג וטיפים</a>
+      <span style="color:rgba(255,255,255,.3)">·</span>
+      <a href="/admin.html" style="color:var(--amber);text-decoration:none;margin:0 12px">📊 ניהול</a>
+    </div>
     פורטל מלונות טבריה &nbsp;·&nbsp; כל הזכויות שמורות
     <div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.6);line-height:1.5">
       אתר זה משתתף בתוכנית Affiliate של Booking.com ומקבל עמלה על הזמנות שבוצעו דרך הקישורים באתר
@@ -743,18 +771,5 @@ document.addEventListener('click', (e) => {
 
 load();
 </script>
-
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-
 </body>
 </html>
