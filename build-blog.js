@@ -81,7 +81,7 @@ function createSlug(filename) {
 
 console.log('🚀 Building blog...\n');
 
-const contentDir = path.join(__dirname, '../content/blog');
+const contentDir = path.join(__dirname, 'content/blog');
 const outputDir = path.join(__dirname, '../public/blog');
 
 // Check if content directory exists
