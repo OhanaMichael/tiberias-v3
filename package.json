@@ -1,11 +1,10 @@
 {
-  "name": "tiberias-hotels-portal",
-  "version": "3.0.0",
-  "description": "Tiberias Hotels Portal — Google Sheets CSV backend",
-  "engines": {
-    "node": ">=18.0.0"
+  "name": "hotels-tiberias-blog",
+  "version": "1.0.0",
+  "description": "Blog build system for hotels-tiberias.co.il",
+  "scripts": {
+    "build": "node build-blog.js"
   },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.97.0"
-  }
+  "author": "ITMO",
+  "license": "MIT"
 }

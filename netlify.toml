@@ -1,23 +1,24 @@
 [build]
+  command = "node build-blog.js"
   publish = "public"
   functions = "netlify/functions"
 
-[functions]
-  node_bundler = "esbuild"
-
-[[headers]]
-  for = "/admin/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
-    Cache-Control = "no-store, no-cache, must-revalidate"
-    X-Frame-Options = "DENY"
-
-[[headers]]
-  for = "/api/hotels"
-  [headers.values]
-    Cache-Control = "public, max-age=60, stale-while-revalidate=30"
+[build.environment]
+  NODE_VERSION = "18"
 
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/blog/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
