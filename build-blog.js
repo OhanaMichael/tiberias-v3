@@ -38,7 +38,7 @@ function parseMarkdown(content) {
 
 // Parse front matter
 function parseFrontMatter(fileContent) {
-const match = fileContent.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+  const match = fileContent.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!match) return null;
   
   const frontMatter = {};
@@ -81,8 +81,8 @@ function createSlug(filename) {
 
 console.log('🚀 Building blog...\n');
 
-const contentDir = path.join(__dirname, 'content/blog');
-const outputDir = path.join(__dirname, '../public/blog');
+const contentDir = path.join(process.cwd(), 'content/blog');
+const outputDir = path.join(process.cwd(), 'public/blog');
 
 // Check if content directory exists
 if (!fs.existsSync(contentDir)) {
@@ -157,20 +157,15 @@ const postsData = {
   generated: new Date().toISOString()
 };
 
-try {
-  fs.writeFileSync(
-    path.join(outputDir, 'posts.json'),
-    JSON.stringify(postsData, null, 2)
-  );
-  console.log('✅ posts.json created successfully');
-} catch (error) {
-  console.error('❌ Error writing posts.json:', error.message);
-}
+fs.writeFileSync(
+  path.join(outputDir, 'posts.json'),
+  JSON.stringify(postsData, null, 2)
+);
 
 console.log('💾 Saved posts.json for blog index');
 
 // Load post template
-const templatePath = path.join(__dirname, 'blog-post-template.html');
+const templatePath = path.join(process.cwd(), 'blog-post-template.html');
 let template = '';
 
 if (fs.existsSync(templatePath)) {
