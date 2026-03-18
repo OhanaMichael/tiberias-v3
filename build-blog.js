@@ -38,7 +38,7 @@ function parseMarkdown(content) {
 
 // Parse front matter
 function parseFrontMatter(fileContent) {
-  const match = fileContent.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+const match = fileContent.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!match) return null;
   
   const frontMatter = {};
@@ -157,10 +157,15 @@ const postsData = {
   generated: new Date().toISOString()
 };
 
-fs.writeFileSync(
-  path.join(outputDir, 'posts.json'),
-  JSON.stringify(postsData, null, 2)
-);
+try {
+  fs.writeFileSync(
+    path.join(outputDir, 'posts.json'),
+    JSON.stringify(postsData, null, 2)
+  );
+  console.log('✅ posts.json created successfully');
+} catch (error) {
+  console.error('❌ Error writing posts.json:', error.message);
+}
 
 console.log('💾 Saved posts.json for blog index');
 
