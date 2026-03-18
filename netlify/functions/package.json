@@ -1,8 +1,0 @@
-{
-  "name": "hotels-tiberias-functions",
-  "version": "1.0.0",
-  "description": "Netlify Functions for hotels-tiberias.co.il",
-  "dependencies": {
-    "@supabase/supabase-js": "^2.39.0"
-  }
-}
