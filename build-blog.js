@@ -190,7 +190,12 @@ if (fs.existsSync(templatePath)) {
     // Generate tags HTML
     const tags = Array.isArray(post.tags) ? post.tags : [];
     const tagsHtml = tags.length > 0 
-      ? `<div class="hero-tags">${tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`
+      ? tags.map(t => `<span class="tag">${t}</span>`).join('')
+      : '';
+    
+    // Generate featured image HTML
+    const featuredImageHtml = post.featured_image 
+      ? `<img src="${post.featured_image}" alt="${post.title}" class="featured-image">`
       : '';
     
     // Share URLs
@@ -205,6 +210,7 @@ if (fs.existsSync(templatePath)) {
       .replace(/{{AUTHOR}}/g, post.author || 'צוות מלונות טבריה')
       .replace(/{{SLUG}}/g, post.slug)
       .replace(/{{FEATURED_IMAGE}}/g, post.featured_image || '/og-image.jpg')
+      .replace(/{{FEATURED_IMAGE_HTML}}/g, featuredImageHtml)
       .replace(/{{DATE}}/g, post.date)
       .replace(/{{DATE_FORMATTED}}/g, dateFormatted)
       .replace(/{{CATEGORY}}/g, post.category || '')
