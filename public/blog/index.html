@@ -27,6 +27,17 @@
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Heebo',sans-serif;background:var(--paper);color:var(--ink);direction:rtl;line-height:1.8;}
     
+    /* TOP NAVIGATION */
+    .top-nav{background:#fff;border-bottom:1px solid var(--rule);box-shadow:var(--sh-sm);position:sticky;top:0;z-index:900;}
+    .top-nav-inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px;}
+    .nav-logo:hover{color:var(--amber);}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-link{font-size:14px;font-weight:600;color:var(--ink-mid);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:6px;}
+    .nav-link:hover{color:var(--amber);}
+    .nav-link.blog{background:linear-gradient(135deg,var(--amber) 0%,#D4971F 100%);color:var(--navy);padding:8px 20px;border-radius:40px;font-weight:800;}
+    .nav-link.blog:hover{background:linear-gradient(135deg,var(--amber-lt) 0%,var(--amber) 100%);transform:translateY(-1px);}
+    
     .header{background:var(--navy);color:#fff;padding:60px 20px;text-align:center;}
     .header h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,52px);font-weight:900;margin-bottom:12px;}
     .header p{font-size:18px;opacity:.9;}
@@ -37,9 +48,12 @@
     .post-card{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm);transition:all .3s;text-decoration:none;display:block;}
     .post-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(11,31,58,.15);}
     
-    .post-category{display:inline-block;background:var(--amber);color:var(--navy);font-size:11px;font-weight:900;padding:6px 14px;border-radius:20px;margin:20px 0 0 20px;}
+    /* FIX: תמונה בגודל קבוע */
+    .post-image{width:100%;height:220px;object-fit:cover;background:var(--sand);}
     
-    .post-content{padding:24px;}
+    .post-category{display:inline-block;background:var(--amber);color:var(--navy);font-size:11px;font-weight:900;padding:6px 14px;border-radius:20px;margin:20px 0 0 20px;position:absolute;top:0;right:0;z-index:1;}
+    
+    .post-content{padding:24px;position:relative;}
     .post-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.3;}
     .post-desc{font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;}
     .post-meta{font-size:13px;color:var(--ink-lt);display:flex;gap:16px;flex-wrap:wrap;}
@@ -49,6 +63,8 @@
     
     footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:30px 20px;font-size:13px;margin-top:80px;}
     footer a{color:var(--amber);text-decoration:none;}
+    
+    @media(max-width:700px){.nav-links{gap:16px;}.nav-link{font-size:12px;}.nav-link.blog{padding:6px 14px;font-size:12px;}}
   </style>
   
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -63,6 +79,17 @@
   </script>
 </head>
 <body>
+
+<!-- TOP NAVIGATION -->
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <a href="/" class="nav-logo">🏨 מלונות טבריה</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">🏠 דף הבית</a>
+      <a href="/blog/" class="nav-link blog">📝 בלוג וטיפים</a>
+    </div>
+  </div>
+</nav>
 
 <header class="header">
   <h1>בלוג מלונות טבריה</h1>
@@ -116,12 +143,20 @@ async function loadPosts() {
         day: 'numeric' 
       });
       
+      // תמונה (אם קיימת)
+      const imageHTML = post.featured_image ? 
+        `<img src="${post.featured_image}" alt="${post.title}" class="post-image">` : 
+        '';
+      
       return `
         <a href="/blog/${post.slug}/" class="post-card">
-          <div class="post-category">${post.category || 'כללי'}</div>
+          <div style="position:relative;">
+            ${imageHTML}
+            <div class="post-category">${post.category || 'כללי'}</div>
+          </div>
           <div class="post-content">
             <h2 class="post-title">${post.title}</h2>
-            <p class="post-desc">${post.description}</p>
+            <p class="post-desc">${post.description || ''}</p>
             <div class="post-meta">
               <span>📅 ${dateStr}</span>
               <span>✍️ ${post.author || 'צוות מלונות טבריה'}</span>
