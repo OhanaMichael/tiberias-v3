@@ -702,10 +702,59 @@ function generateAffiliateLink(hotel){
 function toggleShareMenu(evt, hotelId){
   evt.preventDefault();
   evt.stopPropagation();
+  
+  // בדיקה אם זה מכשיר נייד
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  // אם זה מובייל והדפדפן תומך ב-Native Share
+  if(isMobile && navigator.share){
+    shareHotelNative(hotelId);
+    return;
+  }
+  
+  // אחרת - הצג תפריט רגיל (דסקטופ או דפדפן ישן)
   const menu = document.getElementById('share-menu-' + hotelId);
   const allMenus = document.querySelectorAll('.share-menu');
   allMenus.forEach(m => { if(m !== menu) m.classList.remove('open'); });
   menu.classList.toggle('open');
+}
+
+// Native Share למובייל
+async function shareHotelNative(hotelId){
+  const hotel = data.find(h => h.hotel_id === hotelId);
+  if(!hotel) return;
+  
+  // יצירת URL ייחודי למלון
+  const hotelSlug = hotelId.toLowerCase().replace(/\s+/g, '-');
+  const shareUrl = `${window.location.origin}${window.location.pathname}?hotel=${hotelSlug}`;
+  
+  // טקסט השיתוף
+  const rating = hotel.rating_overall ? `⭐${parseFloat(hotel.rating_overall).toFixed(1)}` : '';
+  const price = hotel.price_from ? `💰 מ-₪${parseInt(hotel.price_from).toLocaleString()}` : '';
+  const shareText = `${hotel.name_he} - ${rating} ${price}\nצפו במלון המדהים הזה על שפת הכנרת!`;
+  
+  try {
+    await navigator.share({
+      title: hotel.name_he,
+      text: shareText,
+      url: shareUrl
+    });
+    
+    // Track native share
+    trackClick(hotelId, hotel.name_he, 'share_native');
+    
+    // Google Analytics
+    if(typeof gtag !== 'undefined'){
+      gtag('event', 'share', {
+        method: 'native',
+        content_type: 'hotel',
+        item_id: hotelId
+      });
+    }
+  } catch(err) {
+    // אם המשתמש ביטל או שגיאה אחרת - לא עושים כלום
+    console.log('Share cancelled or failed:', err);
+  }
 }
 
 function shareVia(platform, hotelId, hotelName){
@@ -743,6 +792,21 @@ function shareVia(platform, hotelId, hotelName){
     });
   }
   
+  // Track share action
+  trackClick(hotelId, hotelName, 'share_' + platform);
+  
+  // סגור את התפריט
+  document.querySelectorAll('.share-menu').forEach(m => m.classList.remove('open'));
+  
+  // מעקב Analytics
+  if(typeof gtag !== 'undefined'){
+    gtag('event', 'share', {
+      method: platform,
+      content_type: 'hotel',
+      item_id: hotelId
+    });
+  }
+}  
   // Track share action
   trackClick(hotelId, hotelName, 'share_' + platform);
   
