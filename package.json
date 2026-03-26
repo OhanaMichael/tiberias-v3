@@ -6,8 +6,11 @@
     "build": "node build-blog.js"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.0"
+    "@supabase/supabase-js": "^2.100.0"
   },
   "author": "ITMO",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
 }
