@@ -5,9 +5,9 @@
 
 const { createClient } = require('@supabase/supabase-js');
 
-// Supabase credentials
+// Supabase credentials - using service_role to bypass RLS
 const supabaseUrl = 'https://yeqjwafjyrtfixxezlug.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InllcWp3YWZqeXJ0Zml4eGV6bHVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5NTIwMTAsImV4cCI6MjA4NzUyODAxMH0.QY0QipnM4pA6xRlYg__-A-WXUvBxA7EtgXqHAqRcDrY';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InllcWp3YWZqeXJ0Zml4eGV6bHVnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MTk1MjAxMCwiZXhwIjoyMDg3NTI4MDEwfQ.WrvE-WOwaUOHrhqhw1sKDYvZCWGAjAWoLibsHLEmv5c';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 exports.handler = async function(event, context) {
@@ -96,7 +96,7 @@ exports.handler = async function(event, context) {
       page_url: pageUrl
     };
 
-    // שמירה ב-Supabase
+    // שמירה ב-Supabase (עם service_role - עוקף RLS!)
     const { data: savedData, error } = await supabase
       .from('clicks')
       .insert([clickData])
