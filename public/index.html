@@ -807,21 +807,7 @@ function shareVia(platform, hotelId, hotelName){
     });
   }
 }  
-  // Track share action
-  trackClick(hotelId, hotelName, 'share_' + platform);
   
-  // סגור את התפריט
-  document.querySelectorAll('.share-menu').forEach(m => m.classList.remove('open'));
-  
-  // מעקב Analytics
-  if(typeof gtag !== 'undefined'){
-    gtag('event', 'share', {
-      method: platform,
-      content_type: 'hotel',
-      item_id: hotelId
-    });
-  }
-}
 
 // סגירת תפריט שיתוף בלחיצה מחוץ
 document.addEventListener('click', (e) => {
