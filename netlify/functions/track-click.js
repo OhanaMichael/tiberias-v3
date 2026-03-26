@@ -1,15 +1,16 @@
 // ████████████████████████████████████████████████████████████████
-// 🎯 Track Click - Netlify Function
+// 🎯 Track Click - Netlify Function (CommonJS)
 // שומר כל קליק ב-Supabase Database
 // ████████████████████████████████████████████████████████████████
-import { createClient } from '@supabase/supabase-js';
+
+const { createClient } = require('@supabase/supabase-js');
 
 // Supabase credentials
 const supabaseUrl = 'https://yeqjwafjyrtfixxezlug.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InllcWp3YWZqeXJ0Zml4eGV6bHVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5NTIwMTAsImV4cCI6MjA4NzUyODAxMH0.QY0QipnM4pA6xRlYg__-A-WXUvBxA7EtgXqHAqRcDrY';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export async function handler(event) {
+exports.handler = async function(event, context) {
   // CORS headers
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -129,7 +130,7 @@ export async function handler(event) {
       body: JSON.stringify({ error: error.message })
     };
   }
-}
+};
 
 // ═══════════════════════════════════════════════════════════════
 // Helper Functions
