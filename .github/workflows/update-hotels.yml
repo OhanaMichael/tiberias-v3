@@ -1,0 +1,35 @@
+name: Update Hotels Daily
+
+on:
+  schedule:
+    # Runs every day at 7:00 AM Israel time (5:00 AM UTC)
+    - cron: '0 5 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub
+
+jobs:
+  update-hotels:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run update script
+        run: node scripts/download-images.js
+        env:
+          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+      
+      - name: Commit and push if changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add public/api/hotels.json public/images/hotels/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update hotels from Google Sheets" && git push)
