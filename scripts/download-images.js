@@ -9,10 +9,9 @@ const path = require('path');
 // ════════════════════════════════════════════════════════════════
 // 🔧 Configuration
 // ════════════════════════════════════════════════════════════════
-
 const CONFIG = {
   SHEET_ID: '1AsMDdWRmj2D7SEhNt5csxu8eFdEjia-aW0sJP6isCBk',
-  API_KEY: 'AIzaSyCRmuSH39W5sY32xRd2FkSoyOW0qqMIICI',
+  API_KEY: process.env.GOOGLE_SHEETS_API_KEY || '',
   SHEET_NAME: 'מלונות טבריה',
   OUTPUT_DIR: path.join(__dirname, '..', 'public', 'images', 'hotels'),
   JSON_PATH: path.join(__dirname, '..', 'public', 'api', 'hotels.json'),
@@ -20,7 +19,6 @@ const CONFIG = {
   JPG_QUALITY: 85,
   TIMEOUT: 30000,
 };
-
 // ════════════════════════════════════════════════════════════════
 // 🎨 Console Colors
 // ════════════════════════════════════════════════════════════════
