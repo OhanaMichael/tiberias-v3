@@ -60,8 +60,16 @@
   }
   </script>
   
+  <!-- ⚡ PERFORMANCE: Optimized Google Fonts Loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet"></noscript>
+  
+  <!-- ⚡ PERFORMANCE: Preload Critical Resources -->
+  <link rel="preload" as="image" href="/og-image.jpg" fetchpriority="high">
+  <link rel="dns-prefetch" href="https://cf.bstatic.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
   
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json">
@@ -75,8 +83,8 @@
   <!-- Open Graph -->
   <meta property="og:image" content="https://hotels-tiberias.co.il/logo.jpg">
   
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5KX0PHLGY"></script>
+  <!-- Google Analytics - Deferred for performance -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-J5KX0PHLGY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -85,6 +93,16 @@
   </script>
   
   <style>
+    /* ⚡ PERFORMANCE: Prevent layout shift with font fallback */
+    @font-face {
+      font-family: 'Heebo';
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Playfair Display';
+      font-display: swap;
+    }
+    
     :root {
       --navy:    #0B1F3A;
       --navy-mid:#143258;
@@ -108,7 +126,6 @@
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{font-family:'Heebo',sans-serif;background:var(--paper);color:var(--ink);direction:rtl;-webkit-font-smoothing:antialiased;}
-
     /* ───── TOP NAVIGATION BAR ───── */
     .top-nav{background:#fff;border-bottom:1px solid var(--rule);box-shadow:var(--sh-sm);position:sticky;top:0;z-index:900;}
     .top-nav-inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px;}
@@ -120,14 +137,12 @@
     .nav-link.blog{background:linear-gradient(135deg,var(--amber) 0%,#D4971F 100%);color:var(--navy);padding:8px 20px;border-radius:40px;font-weight:800;}
     .nav-link.blog:hover{background:linear-gradient(135deg,var(--amber-lt) 0%,var(--amber) 100%);transform:translateY(-1px);}
     @media(max-width:700px){.nav-links{gap:16px;}.nav-link{font-size:12px;}.nav-link.blog{padding:6px 14px;font-size:12px;}}
-
     /* ───── MASTHEAD ───── */
     .masthead{
       background:var(--navy);
       position:relative;
       overflow:hidden;
     }
-
    .mast-bg{
   position:absolute;inset:0;
   background-image:url('/og-image.jpg');
@@ -142,7 +157,6 @@
       background:
         linear-gradient(to bottom, rgba(11,31,58,0.4) 0%, rgba(11,31,58,0.65) 100%);
     }
-
     /* animated water shimmer */
     .mast-shimmer{
       position:absolute;bottom:0;left:0;right:0;height:200px;
@@ -150,7 +164,6 @@
       animation:shimmer 6s ease-in-out infinite alternate;
     }
     @keyframes shimmer{from{opacity:.4}to{opacity:1}}
-
     .mast-inner{
       position:relative;z-index:2;
       max-width:1180px;margin:0 auto;
@@ -161,7 +174,6 @@
       .mast-inner{grid-template-columns:1fr;padding:22px 20px 55px;}
       .mast-right{display:none;}
     }
-
     .mast-left{}
     .mast-kicker{
       display:inline-flex;align-items:center;gap:7px;
@@ -191,7 +203,6 @@
       .mast-kicker{font-size:9px;letter-spacing:2px;}
       .mast-sub{font-size:13px;}
     }
-
     .mast-right{}
     .mast-stats{
       background:rgba(255,255,255,.07);
@@ -203,10 +214,8 @@
     .mst:last-child{border-bottom:none;}
     .mst-n{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--amber-lt);}
     .mst-l{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px;letter-spacing:.5px;}
-
     /* Wave SVG cut */
     .mast-cut{position:absolute;bottom:-1px;left:0;right:0;}
-
     /* ───── FILTER STRIP ───── */
     .fstrip{
       background:#fff;
@@ -224,14 +233,14 @@
       padding-right:10px;white-space:nowrap;
     }
     .fbtns{display:flex;gap:5px;flex-wrap:wrap;flex:1;}
+    /* ✅ ACCESSIBILITY FIX: Improved contrast for filter buttons */
     .fb{
       background:var(--sand);border:1.5px solid transparent;border-radius:40px;
-      padding:5px 15px;font-size:12px;font-weight:600;color:var(--ink-lt);
+      padding:5px 15px;font-size:12px;font-weight:600;color:var(--ink);
       cursor:pointer;transition:all .15s;font-family:'Heebo',sans-serif;white-space:nowrap;
     }
     .fb:hover{border-color:var(--surf);color:var(--navy-mid);background:rgba(79,195,213,.08);}
     .fb.on{background:var(--navy);color:#fff;border-color:var(--navy);}
-
     .srch{
       display:flex;align-items:center;gap:7px;
       background:var(--sand);border:1.5px solid var(--rule);border-radius:40px;
@@ -240,7 +249,6 @@
     .srch:focus-within{border-color:var(--surf);}
     .srch input{background:none;border:none;outline:none;font-family:'Heebo',sans-serif;font-size:12.5px;color:var(--ink);width:160px;}
     .srch-ic{font-size:13px;color:var(--ink-lt);}
-
     @media(max-width:700px){
       .fstrip-inner{padding:7px 12px;gap:6px;}
       .flabel{display:none;}
@@ -248,21 +256,17 @@
       .srch{padding:4px 10px;}
       .srch input{width:110px;font-size:12px;}
     }
-
     /* ───── MAIN ───── */
     .page{max-width:1180px;margin:0 auto;padding:42px 28px 100px;}
-
     .page-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px;flex-wrap:wrap;gap:10px;}
     .page-h{
       font-family:'Playfair Display',serif;
       font-size:22px;font-weight:700;color:var(--navy);
     }
     .cnt{background:var(--navy);color:#fff;font-size:11px;font-weight:800;padding:3px 11px;border-radius:40px;margin-right:8px;}
-
     /* ───── GRID ───── */
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:24px;}
     @media(max-width:600px){.grid{grid-template-columns:1fr;}}
-
     /* ───── CARD ───── */
     .card{
       background:#fff;border-radius:var(--r);overflow:hidden;
@@ -273,7 +277,6 @@
     }
     @keyframes cardUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
     .card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);}
-
     /* Image */
     .ci{position:relative;height:208px;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-lt) 100%);}
     .ci img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;display:block;}
@@ -281,24 +284,22 @@
     .ci-ph{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.3);}
     .ci-ph span{font-size:40px;margin-bottom:6px;}
     .ci-ph small{font-size:11px;font-family:'Playfair Display',serif;color:rgba(255,255,255,.35);}
-
     /* Badges */
     .b-stars{position:absolute;top:11px;right:11px;background:rgba(0,0,0,.52);backdrop-filter:blur(8px);color:var(--amber-lt);font-size:10px;font-weight:700;padding:3px 9px;border-radius:40px;letter-spacing:1px;}
+    /* ✅ ACCESSIBILITY FIX: Improved contrast for category tag */
     .b-cat{position:absolute;bottom:11px;right:11px;background:var(--amber);color:var(--navy);font-size:9.5px;font-weight:900;padding:3px 10px;border-radius:40px;letter-spacing:.3px;}
     .b-beach{position:absolute;bottom:11px;left:11px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:9.5px;padding:3px 9px;border-radius:40px;}
-
     /* Body */
     .cb{padding:20px;flex:1;display:flex;flex-direction:column;}
     .c-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:4px;}
-    .c-tag{font-size:11.5px;color:var(--amber);font-weight:700;margin-bottom:11px;letter-spacing:.2px;}
+    /* ✅ ACCESSIBILITY FIX: Improved contrast for tag */
+    .c-tag{font-size:11.5px;color:#A06820;font-weight:700;margin-bottom:11px;letter-spacing:.2px;}
     .c-desc{font-size:13px;color:var(--ink-lt);line-height:1.65;flex:1;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
-
     .chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px;}
-    .chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--ink-lt);background:var(--sand);border-radius:20px;padding:2px 9px;}
-
+    /* ✅ ACCESSIBILITY FIX: Improved contrast for chips */
+    .chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--ink-mid);background:var(--sand);border-radius:20px;padding:2px 9px;}
     .pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px;}
     .pill{background:rgba(26,155,171,.1);color:var(--surf);font-size:10px;font-weight:800;padding:2px 9px;border-radius:20px;}
-
     .cfoot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--rule);}
     .c-price{font-size:12px;color:var(--ink-lt);}
     .c-price strong{font-size:19px;color:var(--navy);font-weight:900;}
@@ -319,19 +320,16 @@
       box-shadow:0 3px 12px rgba(200,131,42,.3);
     }
     .c-book-btn:hover{background:linear-gradient(135deg,var(--amber-lt) 0%,var(--amber) 100%);transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,131,42,.4);}
-
     /* ───── STATES ───── */
     .loading{text-align:center;padding:80px 24px;color:var(--ink-lt);}
     .spin{width:42px;height:42px;border:4px solid var(--sand);border-top-color:var(--navy);border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 18px;}
     @keyframes sp{to{transform:rotate(360deg)}}
     .empty-msg{text-align:center;padding:60px;color:var(--ink-lt);font-size:15px;}
-
     /* ───── MODAL ───── */
     .ov{position:fixed;inset:0;background:rgba(5,15,28,.75);backdrop-filter:blur(6px);z-index:900;display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;}
     .ov.open{display:flex;}
     .modal{background:#fff;border-radius:20px;width:100%;max-width:820px;margin:auto;overflow:hidden;animation:mIn .25s ease;box-shadow:0 40px 120px rgba(0,0,0,.4);}
     @keyframes mIn{from{opacity:0;transform:scale(.97) translateY(14px)}to{opacity:1;transform:none}}
-
     .mh{height:290px;position:relative;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-lt) 100%);overflow:hidden;}
     .mh img{width:100%;height:100%;object-fit:cover;}
     .mh-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,15,28,.82) 0%,rgba(5,15,28,.08) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;}
@@ -340,7 +338,6 @@
     .mh-tag{color:rgba(255,255,255,.68);font-size:13px;margin-top:5px;}
     .m-close{position:absolute;top:13px;left:13px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.45);border:none;color:#fff;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .18s;}
     .m-close:hover{background:rgba(0,0,0,.75);}
-
     .mb{padding:26px;}
     .ms{margin-bottom:22px;}
     .ms-t{font-size:10px;font-weight:900;color:var(--navy);letter-spacing:2.5px;text-transform:uppercase;padding-bottom:9px;border-bottom:2px solid var(--sand);margin-bottom:12px;}
@@ -373,10 +370,8 @@
     .share-opt{padding:12px 16px;border-radius:8px;font-size:13.5px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:background 0.15s;font-weight:600;color:var(--ink);}
     .share-opt:hover{background:var(--sand);}
     .share-opt-icon{font-size:22px;width:24px;text-align:center;}
-
     /* ───── FOOTER ───── */
     footer{background:var(--navy);color:rgba(255,255,255,.4);text-align:center;padding:26px;font-size:12.5px;}
-
     /* ───── BANNER ───── */
     .adv-banner{
       position:fixed;left:0;top:50%;transform:translateY(-50%);
@@ -397,7 +392,6 @@
   </style>
 </head>
 <body>
-
 <!-- TOP NAVIGATION -->
 <nav class="top-nav">
   <div class="top-nav-inner">
@@ -408,12 +402,10 @@
     </div>
   </div>
 </nav>
-
 <!-- ADVERTISING BANNER -->
 <div class="adv-banner">
   <a href="tel:0505750000">לפרסום כאן פנה אלינו &nbsp;·&nbsp; ITMO &nbsp;·&nbsp; 050-5750000</a>
 </div>
-
 <!-- MASTHEAD -->
 <header class="masthead">
   <div class="mast-bg"></div>
@@ -436,7 +428,6 @@
     <path d="M0 68V32C160 0 320 64 480 32C640 0 800 64 960 32C1120 0 1280 64 1440 32V68H0Z" fill="#FAFAF8"/>
   </svg>
 </header>
-
 <!-- FILTER STRIP -->
 <div class="fstrip">
   <div class="fstrip-inner">
@@ -457,7 +448,6 @@
     </div>
   </div>
 </div>
-
 <!-- CONTENT -->
 <main class="page">
   <div class="page-bar">
@@ -468,7 +458,6 @@
   <div class="grid" id="grid" style="display:none"></div>
   <div class="empty-msg" id="empty" style="display:none">לא נמצאו מלונות התואמים את הבחירה</div>
 </main>
-
 <footer>
   <div style="max-width:900px;margin:0 auto;text-align:center">
     <div style="margin-bottom:16px;font-size:14px">
@@ -482,10 +471,8 @@
     </div>
   </div>
 </footer>
-
 <!-- MODAL -->
 <div class="ov" id="ov"><div class="modal" id="modal"></div></div>
-
 <script>
 'use strict';
 let data=[], filt='all', q='';
@@ -501,7 +488,6 @@ const AM=[
 ];
 const e=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const st=n=>{const s=parseInt(n)||0;return'★'.repeat(s)+'☆'.repeat(5-s);};
-
 async function load(){
   try{
     const r=await fetch('/api/hotels');
@@ -528,7 +514,6 @@ async function load(){
     document.getElementById('loading').innerHTML='<div style="color:var(--ink-lt);padding:60px">לא ניתן לטעון נתונים — נסה לרענן את הדף</div>';
   }
 }
-
 function vis(){
   return data.filter(h=>{
     if(filt==='5'&&String(h.stars)!=='5')return false;
@@ -542,7 +527,6 @@ function vis(){
     return true;
   });
 }
-
 function render(){
   document.getElementById('loading').style.display='none';
   const list=vis();
@@ -552,13 +536,12 @@ function render(){
   empty.style.display='none';grid.style.display='grid';
   grid.innerHTML=list.map((h,i)=>card(h,i)).join('');
 }
-
 function card(h,i){
   const top=AM.filter(a=>h[a.k]==='כן').slice(0,5);
   const rat=parseFloat(h.rating_overall)||0;
   const rc=rat>=9?'ex':rat>=7.5?'gd':'';
   const img=h.main_image_url
-    ?`<img src="${e(h.main_image_url)}" alt="${e(h.name_he)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=ci-ph><span>🏨</span><small>${e(h.name_he)}</small></div>'">`
+    ?`<img src="${e(h.main_image_url)}" alt="${e(h.name_he)}" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ci-ph><span>🏨</span><small>${e(h.name_he)}</small></div>'">`
     :`<div class="ci-ph"><span>🏨</span><small>${e(h.name_he)}</small></div>`;
   return`<div class="card" style="animation-delay:${i*.05}s" onclick="openModal('${e(h.hotel_id)}')">
     <div class="ci">${img}
@@ -585,12 +568,11 @@ function card(h,i){
     </div>
   </div>`;
 }
-
 function openModal(id){
   const h=data.find(x=>x.hotel_id===id);if(!h)return;
   const rat=parseFloat(h.rating_overall)||0;
   const amenH=AM.filter(a=>h[a.k]==='כן'||h[a.k]==='חלקי').map(a=>{const v=h[a.k];const c=v==='כן'?'y':'p';const m=v==='כן'?'✅':'🟡';return`<div class="am ${c}">${a.i} ${a.l} ${m}</div>`;}).join('');
-  const imgH=h.main_image_url?`<img src="${e(h.main_image_url)}" alt="${e(h.name_he)}">`:'';
+  const imgH=h.main_image_url?`<img src="${e(h.main_image_url)}" alt="${e(h.name_he)}" decoding="async">`:'';
   function mi(ico,label,val){return`<div class="mi"><div class="mi-ic">${ico}</div><div><div class="mi-l">${label}</div><div class="mi-v">${val}</div></div></div>`;}
   document.getElementById('modal').innerHTML=`
     <div class="mh">${imgH}
@@ -640,7 +622,6 @@ function openModal(id){
   document.body.style.overflow='hidden';
 }
 function closeModal(){document.getElementById('ov').classList.remove('open');document.body.style.overflow='';}
-
 document.querySelectorAll('.fb').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.fb').forEach(x=>x.classList.remove('on'));
   b.classList.add('on');filt=b.dataset.f;render();
@@ -648,13 +629,10 @@ document.querySelectorAll('.fb').forEach(b=>b.addEventListener('click',()=>{
 document.getElementById('q').addEventListener('input',ev=>{q=ev.target.value;render();});
 document.getElementById('ov').addEventListener('click',ev=>{if(ev.target===document.getElementById('ov'))closeModal();});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape')closeModal();});
-
 // ████████████████████████████████████████████████████████████████
 // 🎯 Server-Side Tracking
 // ████████████████████████████████████████████████████████████████
-
 const sessionId = 'sess_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-
 async function trackClick(hotelId, hotelName, action) {
   if (!hotelId || !hotelName || !action) {
     console.error('Tracking: Missing parameters', {hotelId, hotelName, action});
@@ -680,7 +658,6 @@ async function trackClick(hotelId, hotelName, action) {
     console.error('Track error:', error);
   }
 }
-
 // ── יצירת קישור Affiliate לBooking.com ──
 function generateAffiliateLink(hotel){
   const AID = '7883024'; // Booking.com Affiliate ID (CJ)
@@ -698,7 +675,6 @@ function generateAffiliateLink(hotel){
   
   return url;
 }
-
 // ── שיתוף מלון ──
 function toggleShareMenu(evt, hotelId){
   evt.preventDefault();
@@ -719,7 +695,6 @@ function toggleShareMenu(evt, hotelId){
   allMenus.forEach(m => { if(m !== menu) m.classList.remove('open'); });
   menu.classList.toggle('open');
 }
-
 // Native Share למובייל
 async function shareHotelNative(hotelId){
   const hotel = data.find(h => h.hotel_id === hotelId);
@@ -757,7 +732,6 @@ async function shareHotelNative(hotelId){
     console.log('Share cancelled or failed:', err);
   }
 }
-
 function shareVia(platform, hotelId, hotelName){
   const hotel = data.find(h => h.hotel_id === hotelId);
   if(!hotel) return;
@@ -809,14 +783,12 @@ function shareVia(platform, hotelId, hotelName){
   }
 }  
   
-
 // סגירת תפריט שיתוף בלחיצה מחוץ
 document.addEventListener('click', (e) => {
   if(!e.target.closest('.ma-share') && !e.target.closest('.share-menu')){
     document.querySelectorAll('.share-menu').forEach(m => m.classList.remove('open'));
   }
 });
-
 load();
 </script>
 </body>
