@@ -541,11 +541,8 @@ function card(h,i){
   const top=AM.filter(a=>h[a.k]==='כן').slice(0,5);
   const rat=parseFloat(h.rating_overall)||0;
   const rc=rat>=9?'ex':rat>=7.5?'gd':'';
-const img=h.main_image_url
-    ?`<picture>
-      <source srcset="${e(h.main_image_webp||h.main_image_url)}" type="image/webp">
-      <img src="${e(h.main_image_url)}" alt="${e(h.name_he)}" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ci-ph><span>🏨</span><small>${e(h.name_he)}</small></div>'">
-    </picture>`
+const img=h.main_image_webp||h.main_image_url
+    ?`<img src="${e(h.main_image_webp||h.main_image_url)}" alt="${e(h.name_he)}" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ci-ph><span>🏨</span><small>${e(h.name_he)}</small></div>'">`
     :`<div class="ci-ph"><span>🏨</span><small>${e(h.name_he)}</small></div>`;
   return`<div class="card" style="animation-delay:${i*.05}s" onclick="openModal('${e(h.hotel_id)}')">
     <div class="ci">${img}
