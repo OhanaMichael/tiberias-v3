@@ -1,8 +1,7 @@
 // netlify/functions/hotels.js
-// Public endpoint — /api/hotels
-// Returns sorted, sanitized hotel list (no admin fields)
-
-import { fetchSheetHotels, toPublicHotels, CORS } from "./_sheet.js";
+import fs from 'fs';
+import path from 'path';
+import { CORS } from "./_sheet.js";
 
 export default async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { status: 200, headers: CORS });
@@ -11,23 +10,20 @@ export default async (req) => {
       status: 405, headers: { ...CORS, "Content-Type": "application/json" },
     });
   }
-
+  
   try {
-    const { hotels } = await fetchSheetHotels();
-    const publicHotels = toPublicHotels(hotels);
-
+    // Read from local JSON file instead of Google Sheets
+    const jsonPath = path.join(process.cwd(), 'public', 'api', 'hotels.json');
+    const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+    
     return new Response(
-      JSON.stringify({
-        hotels: publicHotels,
-        total: publicHotels.length,
-        lastUpdated: new Date().toISOString(),
-      }),
+      JSON.stringify(data),
       {
         status: 200,
         headers: {
           ...CORS,
           "Content-Type": "application/json",
-          "Cache-Control": "public, max-age=60, stale-while-revalidate=30",
+          "Cache-Control": "public, max-age=3600",
         },
       }
     );
