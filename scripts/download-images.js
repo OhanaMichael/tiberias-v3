@@ -14,8 +14,8 @@ const CONFIG = {
   API_KEY: process.env.GOOGLE_SHEETS_API_KEY || '',  SHEET_NAME: 'מלונות טבריה',
   OUTPUT_DIR: path.join(__dirname, '..', 'public', 'images', 'hotels'),
   JSON_PATH: path.join(__dirname, '..', 'public', 'api', 'hotels.json'),
-  WEBP_QUALITY: 80,
-  JPG_QUALITY: 85,
+  WEBP_QUALITY: 70,
+  JPG_QUALITY: 80,
   TIMEOUT: 30000,
 };
 // ════════════════════════════════════════════════════════════════
@@ -127,10 +127,10 @@ async function downloadAndProcessImage(url, hotelId) {
     const image = sharp(buffer);
     const metadata = await image.metadata();
     
-    // Resize if too large (max 1200px width)
+    // Resize if too large (max 800px width)
     let processedImage = image;
-    if (metadata.width > 1200) {
-      processedImage = image.resize(1200, null, {
+    if (metadata.width > 800) {
+      processedImage = image.resize(800, null, {
         fit: 'inside',
         withoutEnlargement: true,
       });
