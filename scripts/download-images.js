@@ -176,15 +176,21 @@ async function downloadAndProcessImage(url, hotelId) {
 async function updateJSON(hotels) {
   logInfo('Updating hotels.json...');
   
+  // Sort hotels by display_order
+  const sortedHotels = hotels.sort((a, b) => {
+    const orderA = parseInt(a.display_order) || 999;
+    const orderB = parseInt(b.display_order) || 999;
+    return orderA - orderB;
+  });
+  
   // Ensure directory exists
   await fs.mkdir(path.dirname(CONFIG.JSON_PATH), { recursive: true });
   
   const jsonData = {
-    hotels: hotels,
+    hotels: sortedHotels,
     lastUpdated: new Date().toISOString(),
-    totalCount: hotels.length,
-  };
-  
+    totalCount: sortedHotels.length,
+  };  
   await fs.writeFile(
     CONFIG.JSON_PATH,
     JSON.stringify(jsonData, null, 2),
