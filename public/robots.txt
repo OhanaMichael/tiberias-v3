@@ -3,7 +3,6 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /api/
 
 # Sitemap location
 Sitemap: https://hotels-tiberias.co.il/sitemap.xml
