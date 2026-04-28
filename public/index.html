@@ -36,7 +36,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" as="image" href="/og-image.jpg" fetchpriority="high">
   <link rel="dns-prefetch" href="https://cf.bstatic.com">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/jpeg" href="/logo.jpg">
@@ -84,7 +83,8 @@
 
     /* ── MASTHEAD ── */
     .masthead{background:var(--navy);position:relative;overflow:hidden;}
-    .mast-bg{position:absolute;inset:0;background-image:url('/og-image.jpg');background-size:cover;background-position:center;opacity:0.55;filter:brightness(1.2) saturate(0.85);}
+    .mast-bg{position:absolute;inset:0;overflow:hidden;}
+    .mast-bg img{width:100%;height:100%;object-fit:cover;opacity:0.55;filter:brightness(1.2) saturate(0.85);}
     .mast-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,0.55) 0%,rgba(11,31,58,0.75) 100%);}
     .mast-shimmer{position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(26,155,171,.07),transparent);animation:shimmer 7s ease-in-out infinite alternate;}
     @keyframes shimmer{from{opacity:.3}to{opacity:1}}
@@ -93,7 +93,7 @@
     .mast-kicker{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:800;letter-spacing:3.5px;text-transform:uppercase;color:var(--amber-lt);border-bottom:2px solid var(--amber);padding-bottom:5px;margin-bottom:18px;}
     .mast-h1{font-family:'Heebo',sans-serif;font-size:clamp(44px,8.5vw,116px);font-weight:900;line-height:.93;color:#fff;letter-spacing:-3px;margin-bottom:16px;text-shadow:0 4px 32px rgba(0,0,0,.35);}
     .mast-h1 i{font-style:normal;background:linear-gradient(135deg,var(--amber-lt) 0%,#FFF0B0 50%,var(--amber) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;font-size:1.15em;letter-spacing:-4px;}
-    .mast-sub{font-size:15px;line-height:1.7;font-weight:300;color:rgba(255,255,255,.65);max-width:500px;margin-top:4px;}
+    .mast-sub{font-size:15px;line-height:1.7;font-weight:300;color:rgba(255,255,255,.88);max-width:500px;margin-top:4px;}
     @media(max-width:700px){.mast-kicker{font-size:9px;letter-spacing:2px;}.mast-sub{font-size:13px;}}
     .mast-stats{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);overflow:hidden;min-width:210px;}
     .mst{padding:17px 26px;border-bottom:1px solid rgba(255,255,255,.07);}
@@ -151,7 +151,7 @@
     .b-beach{position:absolute;bottom:12px;left:12px;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.24);color:#fff;font-size:9.5px;padding:3px 10px;border-radius:40px;}
     .cb{padding:20px;flex:1;display:flex;flex-direction:column;}
     .c-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:4px;}
-    .c-tag{font-size:11.5px;color:#A06820;font-weight:700;margin-bottom:12px;letter-spacing:.2px;}
+    .c-tag{font-size:11.5px;color:#7A4F10;font-weight:700;margin-bottom:12px;letter-spacing:.2px;}
     .c-desc{font-size:13px;color:var(--ink-lt);line-height:1.68;flex:1;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
     .chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px;}
     .chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--ink-mid);background:var(--sand);border-radius:20px;padding:3px 9px;}
@@ -252,7 +252,9 @@
   </header>
 
   <div class="masthead" role="region" aria-label="ברוכים הבאים">
-    <div class="mast-bg" role="presentation"></div>
+    <div class="mast-bg" role="presentation">
+      <img src="/og-image.jpg" alt="" fetchpriority="high" decoding="async" width="1440" height="600">
+    </div>
     <div class="mast-shimmer" role="presentation"></div>
     <div class="mast-inner">
       <div class="mast-left">
