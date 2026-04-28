@@ -83,8 +83,7 @@
 
     /* ── MASTHEAD ── */
     .masthead{background:var(--navy);position:relative;overflow:hidden;}
-    .mast-bg{position:absolute;inset:0;overflow:hidden;}
-    .mast-bg img{width:100%;height:100%;object-fit:cover;opacity:0.55;filter:brightness(1.2) saturate(0.85);}
+    .mast-bg{position:absolute;inset:0;background-image:url('/og-image.jpg');background-size:cover;background-position:center;opacity:0.55;filter:brightness(1.2) saturate(0.85);}
     .mast-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,0.55) 0%,rgba(11,31,58,0.75) 100%);}
     .mast-shimmer{position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(26,155,171,.07),transparent);animation:shimmer 7s ease-in-out infinite alternate;}
     @keyframes shimmer{from{opacity:.3}to{opacity:1}}
@@ -252,9 +251,7 @@
   </header>
 
   <div class="masthead" role="region" aria-label="ברוכים הבאים">
-    <div class="mast-bg" role="presentation">
-      <img src="/og-image.jpg" alt="" fetchpriority="high" decoding="async" width="1440" height="600">
-    </div>
+    <div class="mast-bg" role="presentation"></div>
     <div class="mast-shimmer" role="presentation"></div>
     <div class="mast-inner">
       <div class="mast-left">
