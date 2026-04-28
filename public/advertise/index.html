@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פרסמו את המלון שלכם | פורטל מלונות טבריה</title>
+  <meta name="description" content="הצטרפו לפורטל מלונות טבריה — חשיפה לגולשים שמחפשים מלון, הזמנה ישירה, ניהול דיגיטלי מקצועי. ITMO, 050-5750000.">
+  <link rel="canonical" href="https://hotels-tiberias.co.il/advertise/">
+  <meta property="og:title" content="פרסמו את המלון שלכם | מלונות טבריה">
+  <meta property="og:description" content="חשיפה ישירה לגולשים. הצטרפו לפורטל מלונות טבריה.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <link rel="icon" type="image/jpeg" href="/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <style>
+    @font-face{font-family:'Heebo';font-display:swap;}
+    @font-face{font-family:'Playfair Display';font-display:swap;}
+    :root{
+      --navy:#0B1F3A;--navy-mid:#143258;--navy-lt:#1E4D7B;
+      --amber:#C8832A;--amber-lt:#E8A84A;--amber-pl:#FDF3E7;
+      --surf:#1A9BAB;--sand:#F6F0E8;--paper:#FAFAF8;
+      --ink:#111827;--ink-mid:#374151;--ink-lt:#6B7280;
+      --rule:rgba(11,31,58,.1);--sh-sm:0 2px 10px rgba(11,31,58,.08);--sh-md:0 8px 32px rgba(11,31,58,.13);--r:14px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Heebo',sans-serif;background:var(--paper);color:var(--ink);direction:rtl;-webkit-font-smoothing:antialiased;line-height:1.7;}
+    .skip-link{position:absolute;top:-44px;right:0;background:var(--navy);color:#fff;padding:8px 18px;font-size:14px;font-weight:700;border-radius:0 0 var(--r) var(--r);text-decoration:none;z-index:9999;transition:top .15s;}
+    .skip-link:focus{top:0;}
+    .top-nav{background:#fff;border-bottom:1px solid var(--rule);box-shadow:var(--sh-sm);position:sticky;top:0;z-index:900;}
+    .top-nav-inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--navy);text-decoration:none;}
+    .nav-logo:hover{color:var(--amber);}
+    .nav-links{display:flex;align-items:center;gap:28px;}
+    .nav-link{font-size:14px;font-weight:600;color:var(--ink-mid);text-decoration:none;transition:color .2s;}
+    .nav-link:hover,.nav-link.active{color:var(--amber);}
+    .nav-link.blog{background:linear-gradient(135deg,var(--amber) 0%,#D4971F 100%);color:var(--navy);padding:8px 20px;border-radius:40px;font-weight:800;}
+    @media(max-width:700px){.nav-links{gap:12px;}.nav-link{font-size:12px;}.nav-link.blog{padding:6px 12px;}}
+    .breadcrumb{max-width:960px;margin:0 auto;padding:14px 28px 0;font-size:12px;color:var(--ink-lt);}
+    .breadcrumb a{color:var(--ink-lt);text-decoration:none;}.breadcrumb a:hover{color:var(--amber);}
+    .page-hero{background:var(--navy);padding:60px 28px 56px;text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:url('/og-image.jpg');background-size:cover;background-position:center;opacity:0.12;}
+    .page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,.85) 0%,rgba(20,50,88,.9) 100%);}
+    .page-hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+    .page-kicker{font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:14px;}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,52px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:14px;}
+    .page-hero p{font-size:16px;color:rgba(255,255,255,.7);max-width:560px;margin:0 auto 28px;}
+    .hero-cta{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+    .btn{display:inline-block;font-family:'Heebo',sans-serif;font-size:14px;font-weight:800;padding:13px 32px;border-radius:40px;text-decoration:none;border:none;cursor:pointer;transition:all .18s;}
+    .btn-amber{background:var(--amber);color:#fff;}.btn-amber:hover{background:var(--amber-lt);transform:translateY(-1px);}
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;}.btn-outline:hover{background:rgba(255,255,255,.08);}
+    /* Stats strip */
+    .stats-strip{background:#fff;border-bottom:1px solid var(--rule);padding:20px 28px;}
+    .stats-inner{max-width:960px;margin:0 auto;display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
+    .stat{text-align:center;}
+    .stat-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--navy);}
+    .stat-l{font-size:12px;color:var(--ink-lt);margin-top:2px;}
+    .content{max-width:960px;margin:0 auto;padding:52px 28px 80px;}
+    h2.section{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--navy);margin:48px 0 20px;padding-bottom:10px;border-bottom:2px solid var(--sand);}
+    h2.section:first-child{margin-top:0;}
+    p.body{font-size:15px;color:var(--ink-mid);line-height:1.8;margin-bottom:14px;}
+    /* Benefits */
+    .benefit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin:24px 0;}
+    .benefit{background:#fff;border-radius:var(--r);border:1px solid var(--rule);padding:24px;box-shadow:var(--sh-sm);}
+    .benefit-icon{font-size:30px;margin-bottom:14px;}
+    .benefit h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+    .benefit p{font-size:13.5px;color:var(--ink-lt);line-height:1.65;margin:0;}
+    /* Pricing */
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px;margin:24px 0;}
+    .pricing-card{background:#fff;border-radius:var(--r);border:1.5px solid var(--rule);padding:28px;box-shadow:var(--sh-sm);position:relative;}
+    .pricing-card.featured{border-color:var(--amber);border-width:2px;}
+    .price-badge{position:absolute;top:-12px;right:20px;background:var(--amber);color:#fff;font-size:11px;font-weight:800;padding:4px 14px;border-radius:20px;}
+    .pricing-name{font-size:12px;font-weight:800;color:var(--ink-lt);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;}
+    .pricing-price{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--navy);line-height:1;margin-bottom:4px;}
+    .pricing-period{font-size:12px;color:var(--ink-lt);margin-bottom:20px;}
+    .pricing-features{list-style:none;padding:0;margin:0 0 24px;}
+    .pricing-features li{font-size:13.5px;color:var(--ink-mid);padding:6px 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:8px;}
+    .pricing-features li::before{content:'✓';color:var(--surf);font-weight:900;flex-shrink:0;}
+    /* Process */
+    .process{display:flex;flex-direction:column;gap:0;margin:24px 0;}
+    .process-step{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--rule);}
+    .process-step:last-child{border-bottom:none;}
+    .step-num{width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--amber-lt);font-family:'Playfair Display',serif;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .step-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+    .step-desc{font-size:14px;color:var(--ink-lt);line-height:1.65;margin:0;}
+    /* Final CTA */
+    .final-cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--r);padding:40px;text-align:center;margin-top:48px;}
+    .final-cta h2{font-family:'Playfair Display',serif;font-size:28px;color:#fff;margin-bottom:12px;}
+    .final-cta p{font-size:15px;color:rgba(255,255,255,.65);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto;}
+    footer{background:var(--navy);color:rgba(255,255,255,.65);padding:28px;font-size:12.5px;}
+    .footer-inner{max-width:1180px;margin:0 auto;}
+    .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 20px;margin-bottom:14px;font-size:13px;}
+    .footer-links a{color:var(--amber-lt);text-decoration:none;}.footer-links a:hover{color:#fff;}
+    .footer-copy{text-align:center;color:rgba(255,255,255,.4);font-size:12px;}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">דלג לתוכן</a>
+<header role="banner">
+  <nav class="top-nav" role="navigation" aria-label="ניווט ראשי">
+    <div class="top-nav-inner">
+      <a href="/" class="nav-logo">מלונות טבריה</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">דף הבית</a>
+        <a href="/advertise/" class="nav-link active">פרסמו אצלנו</a>
+        <a href="/blog/" class="nav-link blog">בלוג וטיפים</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="נתיב ניווט">
+  <a href="/">דף הבית</a> <span aria-hidden="true">›</span> פרסמו אצלנו
+</nav>
+
+<div class="page-hero" role="region" aria-label="כותרת עמוד">
+  <div class="page-hero-inner">
+    <div class="page-kicker">לבעלי מלונות ובתי הארחה</div>
+    <h1>חשיפה ישירה. ללא עמלות.</h1>
+    <p>הגולש מגיע כשהוא כבר מחפש מלון בטבריה — אתם פוגשים אותו ישירות, קשר פשוט ומקצועי</p>
+    <div class="hero-cta">
+      <a href="tel:0505750000" class="btn btn-amber">התקשרו עכשיו: 050-5750000</a>
+      <a href="#pricing" class="btn btn-outline">ראו את התוכניות</a>
+    </div>
+  </div>
+</div>
+
+<div class="stats-strip" role="region" aria-label="נתוני הפורטל">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">7+</div><div class="stat-l">מלונות בפורטל</div></div>
+    <div class="stat"><div class="stat-n">100</div><div class="stat-l">ציון SEO</div></div>
+    <div class="stat"><div class="stat-n">ישיר</div><div class="stat-l">קשר עם הגולש</div></div>
+    <div class="stat"><div class="stat-n">מקומי</div><div class="stat-l">ניהול אישי</div></div>
+  </div>
+</div>
+
+<main id="main-content" class="content" role="main">
+
+  <h2 class="section">למה פורטל מלונות טבריה?</h2>
+  <p class="body">הפורטל שלנו מחבר בין גולשים שמחפשים מלון בטבריה לבין המלון עצמו — ישירות, בצורה פשוטה ומקצועית. אנחנו מכירים את העיר, מכירים את האורחים, ומנהלים את הנוכחות הדיגיטלית שלכם.</p>
+  <p class="body">הפורטל שלנו פועל על מודל פרסום קבוע — המלון משלם דמי פרסום חודשיים ידועים מראש, ומקבל חשיפה ישירה לגולשים שמחפשים מלון בטבריה. כל לחיצה על "הזמן עכשיו" מגיעה ישירות אליכם. אפס עמלות.</p>
+
+  <div class="benefit-grid" role="list" aria-label="יתרונות הפרסום">
+    <div class="benefit" role="listitem">
+      <div class="benefit-icon" aria-hidden="true">🎯</div>
+      <h3>קהל ממוקד</h3>
+      <p>כל גולש שמגיע לפורטל כבר מחפש מלון בטבריה — לא גולש אקראי.</p>
+    </div>
+    <div class="benefit" role="listitem">
+      <div class="benefit-icon" aria-hidden="true">💰</div>
+      <h3>עלות קבועה וידועה</h3>
+      <p>דמי פרסום חודשיים ידועים מראש — ללא הפתעות וללא תשלומים משתנים.</p>
+    </div>
+    <div class="benefit" role="listitem">
+      <div class="benefit-icon" aria-hidden="true">📈</div>
+      <h3>SEO מקצועי</h3>
+      <p>הפורטל מדורג גבוה בגוגל לחיפושים כמו "מלון בטבריה". אתם נהנים מהדירוג הזה.</p>
+    </div>
+    <div class="benefit" role="listitem">
+      <div class="benefit-icon" aria-hidden="true">✏️</div>
+      <h3>ניהול מקצועי</h3>
+      <p>ITMO מטפלת בעמוד המלון שלכם — תמונות, תיאורים, מחירים, אמניטיס. אתם מתמקדים באורחים.</p>
+    </div>
+    <div class="benefit" role="listitem">
+      <div class="benefit-icon" aria-hidden="true">📊</div>
+      <h3>דוחות מעקב</h3>
+      <p>כמה גולשים צפו בכרטיסייה שלכם, כמה לחצו, מאיפה הגיעו — נתונים ברורים.</p>
+    </div>
+    <div class="benefit" role="listitem">
+      <div class="benefit-icon" aria-hidden="true">🤝</div>
+      <h3>שותפות אמיתית</h3>
+      <p>אנחנו מכירים את טבריה, מכירים את האורחים. אנחנו שותפים לטווח ארוך, לא ספק.</p>
+    </div>
+  </div>
+
+  <h2 class="section" id="pricing">תוכניות הפרסום</h2>
+  <div class="pricing-grid" role="list" aria-label="תוכניות פרסום">
+    <div class="pricing-card" role="listitem">
+      <div class="pricing-name">בסיסי</div>
+      <div class="pricing-price">צרו קשר</div>
+      <div class="pricing-period">לתמחור מותאם</div>
+      <ul class="pricing-features">
+        <li>כרטיסיית מלון בפורטל</li>
+        <li>תמונה ראשית + תיאור</li>
+        <li>קישור הזמנה ישיר</li>
+        <li>מיקום בגריד הראשי</li>
+      </ul>
+      <a href="tel:0505750000" class="btn btn-outline" style="background:transparent;border:2px solid var(--rule);color:var(--navy);display:block;text-align:center;">050-5750000</a>
+    </div>
+    <div class="pricing-card featured" role="listitem">
+      <div class="price-badge">הכי פופולרי</div>
+      <div class="pricing-name">מורחב</div>
+      <div class="pricing-price">צרו קשר</div>
+      <div class="pricing-period">לתמחור מותאם</div>
+      <ul class="pricing-features">
+        <li>כל מה שבבסיסי</li>
+        <li>גלריית תמונות מלאה</li>
+        <li>עמוד מלון ייעודי</li>
+        <li>Schema + Rich Results</li>
+        <li>עדכוני מחיר חודשיים</li>
+        <li>דוח חשיפות חודשי</li>
+      </ul>
+      <a href="tel:0505750000" class="btn btn-amber" style="display:block;text-align:center;">050-5750000</a>
+    </div>
+    <div class="pricing-card" role="listitem">
+      <div class="pricing-name">פרימיום</div>
+      <div class="pricing-price">צרו קשר</div>
+      <div class="pricing-period">לתמחור מותאם</div>
+      <ul class="pricing-features">
+        <li>כל מה שבמורחב</li>
+        <li>קידום ברשתות חברתיות</li>
+        <li>מאמר בבלוג הפורטל</li>
+        <li>מיקום מועדף בראש הרשימה</li>
+        <li>ניהול Google Business</li>
+        <li>ייעוץ שיווקי חודשי</li>
+      </ul>
+      <a href="tel:0505750000" class="btn btn-outline" style="background:transparent;border:2px solid var(--rule);color:var(--navy);display:block;text-align:center;">050-5750000</a>
+    </div>
+  </div>
+
+  <h2 class="section">איך זה עובד?</h2>
+  <div class="process" role="list" aria-label="שלבי הצטרפות">
+    <div class="process-step" role="listitem">
+      <div class="step-num" aria-hidden="true">1</div>
+      <div><div class="step-title">שיחת היכרות</div><p class="step-desc">מתקשרים אלינו ל-050-5750000 או שולחים פנייה. נלמד על המלון שלכם ונתאים חבילה.</p></div>
+    </div>
+    <div class="process-step" role="listitem">
+      <div class="step-num" aria-hidden="true">2</div>
+      <div><div class="step-title">בניית הכרטיסייה</div><p class="step-desc">ITMO בונה עבורכם כרטיסיית מלון מלאה — תמונות, תיאורים, אמניטיס, מחירון, Schema לגוגל.</p></div>
+    </div>
+    <div class="process-step" role="listitem">
+      <div class="step-num" aria-hidden="true">3</div>
+      <div><div class="step-title">Go Live</div><p class="step-desc">הכרטיסייה עולה לפורטל, הגולשים מתחילים לראות אתכם ולחץ ישירות לאתר שלכם.</p></div>
+    </div>
+    <div class="process-step" role="listitem">
+      <div class="step-num" aria-hidden="true">4</div>
+      <div><div class="step-title">מעקב ואופטימיזציה</div><p class="step-desc">דוח חודשי עם נתוני חשיפה ולחיצות, עדכוני מחיר ותוכן לפי הצורך.</p></div>
+    </div>
+  </div>
+
+  <div class="final-cta" role="region" aria-label="קריאה לפעולה">
+    <h2>מוכנים להצטרף?</h2>
+    <p>שיחת היכרות קצרה — ומלון שלכם מול גולשים שמחפשים אתכם.</p>
+    <a href="tel:0505750000" class="btn btn-amber" style="font-size:16px;padding:15px 40px;">050-5750000</a>
+    <br><br>
+    <a href="mailto:info@hotels-tiberias.co.il" class="btn btn-outline">info@hotels-tiberias.co.il</a>
+  </div>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner" style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08);">
+      <div style="max-width:260px;">
+        <div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:900;color:#fff;margin-bottom:7px;">מלונות טבריה</div>
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;">הפורטל הרשמי להזמנת מלונות בטבריה — ניסיון מקומי, שקיפות מלאה.</p>
+      </div>
+      <div style="display:flex;gap:40px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#E8A84A;margin-bottom:10px;">ניווט</div>
+          <a href="/" style="display:block;font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:7px;">דף הבית</a>
+          <a href="/about/" style="display:block;font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:7px;">אודות הפורטל</a>
+          <a href="/faq/" style="display:block;font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:7px;">שאלות נפוצות</a>
+          <a href="/blog/" style="display:block;font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;">בלוג וטיפים</a>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#E8A84A;margin-bottom:10px;">מידע</div>
+          <a href="/contact/" style="display:block;font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:7px;">צרו קשר</a>
+          <a href="/advertise/" style="display:block;font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:7px;">פרסמו אצלנו</a>
+          <a href="/privacy/" style="display:block;font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:7px;">מדיניות פרטיות</a>
+          <a href="/terms/" style="display:block;font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;">תנאי שימוש</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+      <p style="font-size:12px;color:rgba(255,255,255,.3);">© 2026 פורטל מלונות טבריה · ITMO · כל הזכויות שמורות</p>
+      <a href="mailto:sales@hotels-tiberias.co.il" style="font-size:13px;color:#E8A84A;text-decoration:none;font-weight:600;">sales@hotels-tiberias.co.il</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

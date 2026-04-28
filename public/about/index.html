@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>אודות | פורטל מלונות טבריה — ITMO</title>
+  <meta name="description" content="פורטל מלונות טבריה מופעל על ידי ITMO — חברה לניהול מערכות מידע תיירותיות, בני טבריה משנת 1603, עם עשרות שנות ניסיון בתיירות ואירוח מקומי.">
+  <link rel="canonical" href="https://hotels-tiberias.co.il/about/">
+  <meta property="og:title" content="אודות | פורטל מלונות טבריה — ITMO">
+  <meta property="og:description" content="הסיפור מאחורי הפורטל — ניסיון מקומי אמיתי, שורשים בטבריה מ-1603, ומחויבות לתיירות העיר.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <link rel="icon" type="image/jpeg" href="/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "אודות פורטל מלונות טבריה",
+    "url": "https://hotels-tiberias.co.il/about/",
+    "description": "פורטל מלונות טבריה — ניסיון מקומי אמיתי, שורשים בטבריה מ-1603",
+    "author": {
+      "@type": "Organization",
+      "name": "ITMO",
+      "url": "https://itmo.co.il",
+      "telephone": "+972-50-5750000",
+      "email": "sales@hotels-tiberias.co.il",
+      "foundingLocation": "Tiberias, Israel",
+      "areaServed": "Tiberias",
+      "description": "חברה לניהול מערכות מידע עם התמחות במערכות תיירותיות, טבריה",
+      "knowsAbout": ["מערכות תיירות", "מלונות בטבריה", "ניהול דיגיטלי", "אירוח"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tiberias",
+        "addressRegion": "North District",
+        "addressCountry": "IL"
+      }
+    }
+  }
+  </script>
+  <style>
+    @font-face{font-family:'Heebo';font-display:swap;}
+    @font-face{font-family:'Playfair Display';font-display:swap;}
+    @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+    :root{
+      --navy:#0B1F3A;--navy-mid:#143258;--navy-lt:#1E4D7B;
+      --amber:#C8832A;--amber-lt:#E8A84A;--amber-pl:#FDF3E7;
+      --surf:#1A9BAB;--sand:#F6F0E8;--paper:#FAFAF8;
+      --ink:#111827;--ink-mid:#374151;--ink-lt:#6B7280;
+      --rule:rgba(11,31,58,.1);--sh-sm:0 2px 10px rgba(11,31,58,.08);--sh-md:0 8px 32px rgba(11,31,58,.13);--r:14px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Heebo',sans-serif;background:var(--paper);color:var(--ink);direction:rtl;-webkit-font-smoothing:antialiased;line-height:1.75;}
+    .skip-link{position:absolute;top:-44px;right:0;background:var(--navy);color:#fff;padding:8px 18px;font-size:14px;font-weight:700;border-radius:0 0 var(--r) var(--r);text-decoration:none;z-index:9999;transition:top .15s;}
+    .skip-link:focus{top:0;}
+
+    /* ── NAV (identical to index) ── */
+    .top-nav{background:#fff;border-bottom:1px solid var(--rule);box-shadow:var(--sh-sm);position:sticky;top:0;z-index:900;}
+    .top-nav-inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--navy);text-decoration:none;}
+    .nav-logo:hover{color:var(--amber);}
+    .nav-links{display:flex;align-items:center;gap:28px;}
+    .nav-link{font-size:14px;font-weight:600;color:var(--ink-mid);text-decoration:none;transition:color .2s;}
+    .nav-link:hover,.nav-link.active{color:var(--amber);}
+    .nav-link:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px;}
+    .nav-link.blog{background:linear-gradient(135deg,var(--amber) 0%,#D4971F 100%);color:var(--navy);padding:8px 20px;border-radius:40px;font-weight:800;}
+    .nav-link.blog:hover{background:linear-gradient(135deg,var(--amber-lt) 0%,var(--amber) 100%);}
+    @media(max-width:700px){.nav-links{gap:14px;}.nav-link{font-size:12px;}.nav-link.blog{padding:6px 14px;font-size:12px;}}
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb{max-width:860px;margin:0 auto;padding:14px 28px 0;font-size:12px;color:var(--ink-lt);}
+    .breadcrumb a{color:var(--ink-lt);text-decoration:none;}.breadcrumb a:hover{color:var(--amber);}
+    .breadcrumb span{margin:0 5px;}
+
+    /* ── HERO ── */
+    .page-hero{background:var(--navy);padding:56px 28px 52px;text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:url('/og-image.jpg') center/cover;opacity:0.1;}
+    .page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,.92) 0%,rgba(20,50,88,.95) 100%);}
+    .page-hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+    .page-kicker{font-size:10px;font-weight:800;letter-spacing:3.5px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:14px;display:block;}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,50px);font-weight:900;color:#fff;line-height:1.08;margin-bottom:16px;}
+    .page-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:540px;margin:0 auto;line-height:1.7;}
+
+    /* ── CONTENT ── */
+    .content{max-width:860px;margin:0 auto;padding:56px 28px 90px;}
+    .content h2{font-family:'Playfair Display',serif;font-size:25px;font-weight:700;color:var(--navy);margin:48px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--sand);}
+    .content h2:first-child{margin-top:0;}
+    .content h3{font-size:17px;font-weight:700;color:var(--navy-mid);margin:22px 0 8px;}
+    .content p{font-size:15px;color:var(--ink-mid);line-height:1.82;margin-bottom:16px;}
+    .content a{color:var(--surf);text-decoration:none;border-bottom:1px solid rgba(26,155,171,.3);transition:color .2s;}
+    .content a:hover{color:var(--navy);border-color:var(--navy);}
+
+    /* ── HIGHLIGHT QUOTE ── */
+    .highlight{background:var(--amber-pl);border-right:4px solid var(--amber);border-radius:0 var(--r) var(--r) 0;padding:20px 24px;margin:28px 0;}
+    .highlight p{margin:0;color:var(--ink-mid);font-size:15px;line-height:1.72;}
+
+    /* ── ITMO CARD ── */
+    .itmo-card{background:#fff;border-radius:var(--r);border:1px solid var(--rule);box-shadow:var(--sh-md);padding:32px;margin:28px 0;position:relative;overflow:hidden;}
+    .itmo-card::before{content:'';position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--amber) 0%,var(--amber-lt) 100%);}
+    .itmo-logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--navy);margin-bottom:6px;letter-spacing:-1px;}
+    .itmo-tagline{font-size:12px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;}
+    .itmo-body{font-size:15px;color:var(--ink-mid);line-height:1.82;}
+    .itmo-body strong{color:var(--navy);}
+    .itmo-contact{margin-top:20px;padding-top:18px;border-top:1px solid var(--rule);display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+    .itmo-contact-label{font-size:11px;font-weight:700;color:var(--ink-lt);text-transform:uppercase;letter-spacing:1px;}
+    .itmo-contact a{font-size:15px;font-weight:700;color:var(--surf);text-decoration:none;border:none;}
+    .itmo-contact a:hover{color:var(--navy);}
+
+    /* ── VALUES GRID ── */
+    .value-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin:28px 0;}
+    .value-card{background:#fff;border-radius:var(--r);border:1px solid var(--rule);padding:26px;box-shadow:var(--sh-sm);transition:transform .2s,box-shadow .2s;}
+    .value-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md);}
+    .value-icon{font-size:30px;margin-bottom:14px;display:block;}
+    .value-card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:9px;}
+    .value-card p{font-size:13.5px;color:var(--ink-lt);line-height:1.68;margin:0;}
+
+    /* ── TIMELINE ── */
+    .timeline{margin:28px 0;}
+    .tl-item{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule);}
+    .tl-item:last-child{border-bottom:none;}
+    .tl-year{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--amber);width:60px;flex-shrink:0;padding-top:2px;}
+    .tl-text{font-size:14px;color:var(--ink-mid);line-height:1.7;}
+    .tl-text strong{color:var(--navy);display:block;margin-bottom:3px;font-size:15px;}
+
+    /* ── CTA BOX ── */
+    .cta-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--r);padding:36px 40px;margin:48px 0;text-align:center;}
+    .cta-box h3{font-family:'Playfair Display',serif;font-size:24px;color:#fff;margin-bottom:12px;}
+    .cta-box p{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:24px;line-height:1.7;}
+    .btn{display:inline-block;font-family:'Heebo',sans-serif;font-size:14px;font-weight:800;padding:13px 32px;border-radius:40px;text-decoration:none;border:none;cursor:pointer;transition:all .18s;margin:5px;}
+    .btn:focus-visible{outline:3px solid var(--amber-lt);outline-offset:2px;}
+    .btn-amber{background:var(--amber);color:#fff;}.btn-amber:hover{background:var(--amber-lt);transform:translateY(-1px);}
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,.35);color:#fff;}.btn-outline:hover{background:rgba(255,255,255,.08);border-color:#fff;}
+
+    /* ── FOOTER (identical to index) ── */
+    footer{background:var(--navy);color:rgba(255,255,255,.7);padding:36px 28px;font-size:12.5px;}
+    .footer-inner{max-width:1100px;margin:0 auto;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.08);}
+    .footer-brand{max-width:280px;}
+    .footer-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;}
+    .footer-tagline{font-size:13px;color:rgba(255,255,255,.42);line-height:1.6;}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col-title{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:12px;}
+    .footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:8px;transition:color .2s;}
+    .footer-col a:hover{color:#fff;}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+    .footer-copy{font-size:12px;color:rgba(255,255,255,.3);}
+    .footer-contact a{font-size:13px;color:var(--amber-lt);text-decoration:none;font-weight:600;}
+    .footer-contact a:hover{color:#fff;}
+    @media(max-width:600px){.footer-top{flex-direction:column;}.footer-cols{gap:28px;}.footer-bottom{flex-direction:column;text-align:center;}}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">דלג לתוכן</a>
+
+<header role="banner">
+  <nav class="top-nav" role="navigation" aria-label="ניווט ראשי">
+    <div class="top-nav-inner">
+      <a href="/" class="nav-logo">מלונות טבריה</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">דף הבית</a>
+        <a href="/about/" class="nav-link active">אודות</a>
+        <a href="/faq/" class="nav-link">שאלות נפוצות</a>
+        <a href="/blog/" class="nav-link blog">בלוג וטיפים</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="נתיב ניווט">
+  <a href="/">דף הבית</a><span aria-hidden="true"> › </span>אודות הפורטל
+</nav>
+
+<div class="page-hero" role="region" aria-label="כותרת עמוד">
+  <div class="page-hero-inner">
+    <span class="page-kicker">הסיפור שמאחורינו</span>
+    <h1>פורטל המלונות שנולד מאהבה לטבריה</h1>
+    <p>לא אלגוריתם. לא קורפורציה. אנשים שמכירים את הכנרת, את המלונות, ואת האורחים — מזה עשרות שנים.</p>
+  </div>
+</div>
+
+<main id="main-content" class="content" role="main">
+
+  <h2>הרעיון שמאחורי הפורטל</h2>
+  <p>טבריה היא אחת מערי התיירות הוותיקות בישראל — ולמרות זאת, המלונות שבה לא תמיד מקבלים את החשיפה שמגיעה להם. הפורטל נולד מתוך רצון אמיתי לשנות את זה: ליצור מקום אחד, ברור ומקצועי, שבו הגולש פוגש את המלון ישירות — בלי שכבות, בלי בלבול, בלי מחירים מפתיעים בקופה.</p>
+
+  <div class="highlight">
+    <p><strong>ההחלטה להקים את הפורטל לא הייתה עסקית בלבד.</strong> היא נבעה מרצון כן לסייע לעיר טבריה ולתיירות שבה — תוך שימת דגש על בתי המלון המקומיים ועל חיבור ישיר בין הגולש למלון.</p>
+  </div>
+
+  <h2>הערכים שמנחים אותנו</h2>
+  <div class="value-grid" role="list">
+    <div class="value-card" role="listitem">
+      <span class="value-icon" aria-hidden="true">📍</span>
+      <h3>שורשים אמיתיים</h3>
+      <p>אנחנו לא ספק שירות מרחוק. אנחנו בני העיר — מכירים כל רחוב, כל מלון, ורבים מהאורחים באופן אישי.</p>
+    </div>
+    <div class="value-card" role="listitem">
+      <span class="value-icon" aria-hidden="true">🔍</span>
+      <h3>אוצרות ידני</h3>
+      <p>לא כל מלון נכנס לפורטל. כל נכס נבחן על סמך איכות, ניהול ומוניטין — לא על פי גודל הארנק.</p>
+    </div>
+    <div class="value-card" role="listitem">
+      <span class="value-icon" aria-hidden="true">💬</span>
+      <h3>שקיפות מלאה</h3>
+      <p>המחיר שאתם רואים הוא המחיר שתשלמו. ללא הפתעות, ללא תוספות נסתרות. ישיר ופשוט.</p>
+    </div>
+    <div class="value-card" role="listitem">
+      <span class="value-icon" aria-hidden="true">🤝</span>
+      <h3>קשר ישיר</h3>
+      <p>כל הזמנה מגיעה ישירות למלון. הגולש והמלון מדברים — בלי אמצעי שיוצר פערי מידע.</p>
+    </div>
+  </div>
+
+  <h2>אודות ITMO</h2>
+  <div class="itmo-card">
+    <div class="itmo-logo">ITMO</div>
+    <div class="itmo-tagline">ניהול מערכות מידע תיירותיות · טבריה</div>
+    <p class="itmo-body">
+      <strong>ITMO</strong> היא חברה לניהול מערכות מידע עם התמחות במערכות תיירותיות, ומשרדיה בטבריה. החברה מנוהלת על ידי תושב שורשי של העיר — שמשפחתו חיה בטבריה מאז <strong>1603</strong>, ועוסקת בתיירות ואירוח מזה עשרות שנים.
+    </p>
+    <p class="itmo-body" style="margin-top:12px;">
+      הניסיון הזה — שלא נרכש בספרי לימוד — הוא מה שמבדיל את הפורטל. אנחנו יודעים אילו מלונות מטפלים היטב באורחים, אילו שכונות מתאימות לאיזה סוג נופש, ואיך נראית טבריה באמת בכל עונה.
+    </p>
+    <div class="itmo-contact">
+      <span class="itmo-contact-label">פניות עסקיות:</span>
+      <a href="mailto:sales@hotels-tiberias.co.il">sales@hotels-tiberias.co.il</a>
+    </div>
+  </div>
+
+  <h2>ציר הזמן של השורשים</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">1603</div>
+      <div class="tl-text">
+        <strong>שורשי המשפחה בטבריה</strong>
+        המשפחה מתיישבת בטבריה — עיר שהיתה אז מרכז תיירות דתית ותרבותית בגליל.
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">עשרות שנים</div>
+      <div class="tl-text">
+        <strong>ניסיון בתיירות ואירוח</strong>
+        עשרות שנות פעילות בענף התיירות והאירוח הטבריאני — מכאן נובע הידע המקומי שמפעיל את הפורטל.
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2024</div>
+      <div class="tl-text">
+        <strong>הקמת הפורטל</strong>
+        ITMO מקימה את hotels-tiberias.co.il מתוך מחויבות לתיירות העיר ולחיבור ישיר בין גולשים למלונות.
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2026</div>
+      <div class="tl-text">
+        <strong>מתרחבים ומשפרים</strong>
+        הפורטל גדל, מוסיף מלונות נבחרים, ומפתח כלים דיגיטליים לשיפור חווית ההזמנה בטבריה.
+      </div>
+    </div>
+  </div>
+
+  <h2>כיצד הפורטל עובד</h2>
+  <p>הפורטל מציג מלונות נבחרים בטבריה עם פרטים מלאים — מיקום, דירוג, אמניטיס, מחירון עדכני. כל כפתור הזמנה מפנה ישירות לאתר המלון עצמו. כך הגולש פוגש את המלון ישירות, ומקבל את המחיר הישיר ממקור ראשון.</p>
+  <p>המלונות בפורטל הם שותפים שבחרו להיות חלק מהרשימה. ITMO מנהלת את הנוכחות הדיגיטלית שלהם — תמונות, תיאורים, מידע מדויק ועדכני — כדי שהגולש יקבל תמונה מלאה לפני שהוא מחליט.</p>
+
+  <div class="cta-box">
+    <h3>רוצים להכניס את המלון שלכם לפורטל?</h3>
+    <p>אנחנו מחפשים מלונות איכותיים בטבריה והסביבה להצטרף לרשימה.<br>שיחת היכרות קצרה — ומלון שלכם מול גולשים שמחפשים אתכם.</p>
+    <a href="/advertise/" class="btn btn-amber">פרסמו אצלנו</a>
+    <a href="/" class="btn btn-outline">חזרה למלונות</a>
+  </div>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">מלונות טבריה</div>
+        <p class="footer-tagline">הפורטל הרשמי להזמנת מלונות בטבריה — ניסיון מקומי, שקיפות מלאה, קשר ישיר למלון.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">ניווט</div>
+          <a href="/">דף הבית</a>
+          <a href="/about/">אודות הפורטל</a>
+          <a href="/faq/">שאלות נפוצות</a>
+          <a href="/blog/">בלוג וטיפים</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">מידע</div>
+          <a href="/contact/">צרו קשר</a>
+          <a href="/advertise/">פרסמו אצלנו</a>
+          <a href="/privacy/">מדיניות פרטיות</a>
+          <a href="/terms/">תנאי שימוש</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 פורטל מלונות טבריה · ITMO · כל הזכויות שמורות</p>
+      <div class="footer-contact">
+        <a href="mailto:sales@hotels-tiberias.co.il">sales@hotels-tiberias.co.il</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
