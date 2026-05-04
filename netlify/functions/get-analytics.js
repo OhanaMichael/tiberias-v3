@@ -6,8 +6,8 @@
 const { createClient } = require('@supabase/supabase-js');
 
 // Supabase credentials - using service_role to bypass RLS
-const supabaseUrl = 'https://yeqjwafjyrtfixxezlug.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InllcWp3YWZqeXJ0Zml4eGV6bHVnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MTk1MjAxMCwiZXhwIjoyMDg3NTI4MDEwfQ.WrvE-WOwaUOHrhqhw1sKDYvZCWGAjAWoLibsHLEmv5c';
+const supabaseUrl = process.env.SUPABASE_URL || '';
+const supabaseKey = process.env.SUPABASE_SERVICE_KEY || '';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 exports.handler = async function(event, context) {
