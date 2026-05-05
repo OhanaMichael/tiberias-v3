@@ -25,6 +25,7 @@ jobs:
       
       - name: Run update script
         run: node scripts/download-images.js
+        continue-on-error: true
         env:
           GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
       
