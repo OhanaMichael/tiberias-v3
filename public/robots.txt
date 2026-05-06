@@ -5,7 +5,7 @@ Allow: /
 Disallow: /admin/
 
 # Sitemap location
-Sitemap: https://hotels-tiberias.co.il/sitemap.xml
+Sitemap: https://www.hotels-tiberias.co.il/sitemap.xml
 
 # Crawl-delay for responsible crawling
 Crawl-delay: 1

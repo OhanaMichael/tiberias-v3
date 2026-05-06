@@ -199,7 +199,7 @@ if (fs.existsSync(templatePath)) {
       : '';
     
     // Share URLs
-    const shareUrl = encodeURIComponent(`https://hotels-tiberias.co.il/blog/${post.slug}/`);
+    const shareUrl = encodeURIComponent(`https://www.hotels-tiberias.co.il/blog/${post.slug}/`);
     const shareText = encodeURIComponent(`${post.title} - ${post.description} ${shareUrl}`);
     
     // Replace placeholders

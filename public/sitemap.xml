@@ -3,7 +3,7 @@
 
   <!-- ── דף הבית ── -->
   <url>
-    <loc>https://hotels-tiberias.co.il/</loc>
+    <loc>https://www.hotels-tiberias.co.il/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,42 +11,42 @@
 
   <!-- ── עמודים ראשיים ── -->
   <url>
-    <loc>https://hotels-tiberias.co.il/about/</loc>
+    <loc>https://www.hotels-tiberias.co.il/about/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/faq/</loc>
+    <loc>https://www.hotels-tiberias.co.il/faq/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/contact/</loc>
+    <loc>https://www.hotels-tiberias.co.il/contact/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/advertise/</loc>
+    <loc>https://www.hotels-tiberias.co.il/advertise/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/privacy/</loc>
+    <loc>https://www.hotels-tiberias.co.il/privacy/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/terms/</loc>
+    <loc>https://www.hotels-tiberias.co.il/terms/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -54,21 +54,21 @@
 
   <!-- ── עמודי קטגוריה SEO ── -->
   <url>
-    <loc>https://hotels-tiberias.co.il/hotels-boutique-tiberias/</loc>
+    <loc>https://www.hotels-tiberias.co.il/hotels-boutique-tiberias/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/hotels-spa-tiberias/</loc>
+    <loc>https://www.hotels-tiberias.co.il/hotels-spa-tiberias/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/hotels-family-tiberias/</loc>
+    <loc>https://www.hotels-tiberias.co.il/hotels-family-tiberias/</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -76,7 +76,7 @@
 
   <!-- ── בלוג — דף ראשי ── -->
   <url>
-    <loc>https://hotels-tiberias.co.il/blog/</loc>
+    <loc>https://www.hotels-tiberias.co.il/blog/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -84,56 +84,56 @@
 
   <!-- ── בלוג — מאמרים ── -->
   <url>
-    <loc>https://hotels-tiberias.co.il/blog/10-things-to-do-in-tiberias/</loc>
+    <loc>https://www.hotels-tiberias.co.il/blog/10-things-to-do-in-tiberias/</loc>
     <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/blog/tiberias-beaches-water-parks/</loc>
+    <loc>https://www.hotels-tiberias.co.il/blog/tiberias-beaches-water-parks/</loc>
     <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/blog/tiberias-restaurants-guide/</loc>
+    <loc>https://www.hotels-tiberias.co.il/blog/tiberias-restaurants-guide/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/blog/tiberium-light-water-show-tiberias/</loc>
+    <loc>https://www.hotels-tiberias.co.il/blog/tiberium-light-water-show-tiberias/</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/blog/roman-theater-tiberias-archeological-site/</loc>
+    <loc>https://www.hotels-tiberias.co.il/blog/roman-theater-tiberias-archeological-site/</loc>
     <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/blog/jewish-heritage-tiberias-holy-sites/</loc>
+    <loc>https://www.hotels-tiberias.co.il/blog/jewish-heritage-tiberias-holy-sites/</loc>
     <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/blog/vacation-with-dog-tiberias-pet-boarding/</loc>
+    <loc>https://www.hotels-tiberias.co.il/blog/vacation-with-dog-tiberias-pet-boarding/</loc>
     <lastmod>2026-03-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://hotels-tiberias.co.il/blog/tiberias-promenade-guide/</loc>
+    <loc>https://www.hotels-tiberias.co.il/blog/tiberias-promenade-guide/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
