@@ -7,11 +7,10 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.100.0",
-    "axios": "^1.15.0"
+    "axios": "^1.15.0",
+    "sharp": "^0.34.5"
   },
   "author": "ITMO",
   "license": "MIT",
-  "devDependencies": {
-    "sharp": "^0.34.5"
-  }
+  "devDependencies": {}
 }
