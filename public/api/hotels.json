@@ -76,8 +76,8 @@
       "distance_center": "0",
       "phone": "04-6206464",
       "email": "citystaytiberias@gmail.com",
-      "website": "https://citystay.co.il/he/",
-      "booking_url": "https://citystay.co.il/he/bk",
+      "website": "https://citystay.co.il/",
+      "booking_url": "https://www.citystay.co.il/booking/",
       "booking_com_url": "https://www.booking.com/hotel/il/vila-roca-tiberias.he.html?aid=318615&label=Hebrew_Israel-HE-IL-131246332004-MdQm9Qe2Rq62YowBXEpZVwS634186710187%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi55132975719%3Atidsa-1403086274596%3Alp1008019%3Ali%3Adec%3Adm%3Aag131246332004%3Acmp315194425&sid=9ccd018f5c7f999f305382b191de10f5&dest_id=-781620&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1771201514&srpvid=f32df8db8036d5a74436e86e8ae0729d&type=total&ucfs=1&",
       "airbnb_url": "https://he.airbnb.com/rooms/1332091361149453874?source_impression_id=p3_1771201567_P368V69w6p4ebkMG",
       "num_rooms": "4",
@@ -421,6 +421,6 @@
       "main_image_webp": "/images/hotels/TBR002.webp"
     }
   ],
-  "lastUpdated": "2026-05-14T07:36:11.679Z",
+  "lastUpdated": "2026-05-15T09:53:59.278Z",
   "totalCount": 7
 }
